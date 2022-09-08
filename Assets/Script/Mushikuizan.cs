@@ -13,6 +13,8 @@ public class Mushikuizan : MonoBehaviour
 
     public TextMeshProUGUI sumNumberText;
     public TextMeshProUGUI leftNumberText;
+    public TextMeshProUGUI rightNumberText;
+    public GameObject squareText;　　//Textだけど、GameObject型で取得した
 
     public TextMeshProUGUI textMeshProUGUI_0;
     public TextMeshProUGUI textMeshProUGUI_1;
@@ -43,10 +45,10 @@ public class Mushikuizan : MonoBehaviour
     {
         //SystemとUnityEngineの両方があると、Random.Rangeは衝突して使えなくなる
         sumNumber = UnityEngine.Random.Range(1,11); // 答えは、１〜１０までの数字をランダムで抽出する
-        Debug.Log(sumNumber);
+        //Debug.Log(sumNumber);
         sumNumberText.text = sumNumber.ToString();
         leftNumber = UnityEngine.Random.Range(0, sumNumber+1); //左の数字は、０〜sumNumner+1まで
-        Debug.Log(leftNumber);
+        //Debug.Log(leftNumber);
         leftNumberText.text = leftNumber.ToString();
         rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
         Debug.Log(rightNumber);
@@ -56,10 +58,16 @@ public class Mushikuizan : MonoBehaviour
     {
         //０〜１０までのボタンにそれぞれ、０〜１０のint型の整数として識別するには、どうしたら良いのか？
 
-        //if (rightNumber = )
+        //if (rightNumber = 押したボタンの数字と一緒なら)
         //{
 
         //}
+    }
+
+    void appearAnwser()
+    {
+        squareText.SetActive(false); 
+        rightNumberText.text = rightNumber.ToString();
     }
     void ExtractTextInt()
     {
