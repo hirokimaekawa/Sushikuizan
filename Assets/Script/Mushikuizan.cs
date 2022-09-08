@@ -11,6 +11,9 @@ public class Mushikuizan : MonoBehaviour
     int rightNumber;
     int sumNumber;
 
+    public TextMeshProUGUI sumNumberText;
+    public TextMeshProUGUI leftNumberText;
+
     public TextMeshProUGUI textMeshProUGUI_0;
     public TextMeshProUGUI textMeshProUGUI_1;
     public TextMeshProUGUI textMeshProUGUI_2;
@@ -41,8 +44,10 @@ public class Mushikuizan : MonoBehaviour
         //SystemとUnityEngineの両方があると、Random.Rangeは衝突して使えなくなる
         sumNumber = UnityEngine.Random.Range(1,11); // 答えは、１〜１０までの数字をランダムで抽出する
         Debug.Log(sumNumber);
+        sumNumberText.text = sumNumber.ToString();
         leftNumber = UnityEngine.Random.Range(0, sumNumber+1); //左の数字は、０〜sumNumner+1まで
         Debug.Log(leftNumber);
+        leftNumberText.text = leftNumber.ToString();
         rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
         Debug.Log(rightNumber);
     }
