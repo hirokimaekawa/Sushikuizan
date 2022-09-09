@@ -277,6 +277,6 @@ public class Mushikuizan : MonoBehaviour
 
     public void ToTitleButton()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("Select");
     }
 }
