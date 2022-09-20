@@ -31,4 +31,9 @@ public class MushikuiMoney : MonoBehaviour
     {
         getMoney = PlayerPrefs.GetInt(SEVEKEY, getMoney);
     }
+    //[SerializeField]
+    //public class JsonModel
+    //{
+    //    [SerializeField] int currentMoney;
+    //}
 }
