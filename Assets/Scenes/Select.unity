@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 892584888}
   - component: {fileID: 892584887}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SushikuiButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 1185289271}
   - component: {fileID: 1185289270}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MushikuiButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1038,7 +1038,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1185289271}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1587754387}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: LoadMushikuizan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1185289271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1300,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521313019}
   m_CullTransparentMesh: 1
+--- !u!1 &1587754386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1587754388}
+  - component: {fileID: 1587754387}
+  m_Layer: 0
+  m_Name: SelectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1587754387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587754386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f08b1576bd4417a97f0e7f5755246d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curerntMoneyText: {fileID: 1645272411}
+--- !u!4 &1587754388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587754386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 704.32605, y: 759.6266, z: -0.64737886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590326403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1742,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7063610574398635173, guid: 8b314ca3772a142abaca0400ab01be71, type: 3}
   m_PrefabInstance: {fileID: 1645272409}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1645272411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063610574435896236, guid: 8b314ca3772a142abaca0400ab01be71, type: 3}
+  m_PrefabInstance: {fileID: 1645272409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2006788775
 GameObject:
   m_ObjectHideFlags: 0

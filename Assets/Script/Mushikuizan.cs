@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Mushikuizan : MonoBehaviour
 {
+    public static Mushikuizan instance;
 
     int leftNumber;
     int rightNumber;
     int sumNumber;
 
-    int count; // デフォルトで20とかにしておいて、設定で変えれるようにする
+    int questionCount; // デフォルトで20とかにしておいて、設定で変えれるようにする
+    //public int getMoney;
 
     public TextMeshProUGUI sumNumberText;
     public TextMeshProUGUI leftNumberText;
@@ -20,24 +22,14 @@ public class Mushikuizan : MonoBehaviour
     public GameObject squareText;　　//Textだけど、GameObject型で取得した
     public GameObject answerImage;
     public GameObject finishPanel;
+    public GameObject backPanel;
+    
 
     AudioSource audioSource;
     public AudioClip correctSE;
     public AudioClip incorrectSE;
     public AudioClip successSE;
 
-    //以下、11個の宣言はもう必要ない
-    public TextMeshProUGUI textMeshProUGUI_0;
-    public TextMeshProUGUI textMeshProUGUI_1;
-    public TextMeshProUGUI textMeshProUGUI_2;
-    public TextMeshProUGUI textMeshProUGUI_3;
-    public TextMeshProUGUI textMeshProUGUI_4;
-    public TextMeshProUGUI textMeshProUGUI_5;
-    public TextMeshProUGUI textMeshProUGUI_6;
-    public TextMeshProUGUI textMeshProUGUI_7;
-    public TextMeshProUGUI textMeshProUGUI_8;
-    public TextMeshProUGUI textMeshProUGUI_9;
-    public TextMeshProUGUI textMeshProUGUI_10;
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +48,10 @@ public class Mushikuizan : MonoBehaviour
     bool isCalledOnce = false;
     void Finish()
     {
-        if (count == 10 && isCalledOnce ==false)
+        if (questionCount == 10 && isCalledOnce ==false)
         {
             finishPanel.SetActive(true);
+            MushikuiMoney.instance.getMoney += 10;
             audioSource.PlayOneShot(successSE);  //Updateに入っているから、ずっと鳴りっぱなし。
             isCalledOnce = true;
         }
@@ -81,14 +74,14 @@ public class Mushikuizan : MonoBehaviour
 
     IEnumerator appearAnwser()
     {
-        if (count < 9)
+        if (questionCount < 9)
         {
             ShowCorrectSE();
             squareText.SetActive(false);
             rightNumberText.text = rightNumber.ToString();
             answerImage.SetActive(true);
-            count++;
-            Debug.Log("カウントは"+count);
+            questionCount++;
+            Debug.Log("カウントは"+ questionCount);
             yield return new WaitForSeconds(1.0f);
             CreateQuestion();
         }
@@ -98,8 +91,8 @@ public class Mushikuizan : MonoBehaviour
             squareText.SetActive(false);
             rightNumberText.text = rightNumber.ToString();
             answerImage.SetActive(true);
-            count++;
-            Debug.Log(" 最後のカウントは" + count);
+            questionCount++;
+            Debug.Log(" 最後のカウントは" + questionCount);
         }
         
     }
@@ -113,19 +106,19 @@ public class Mushikuizan : MonoBehaviour
 
     void Reset()
     {
-        count = 0;
+        questionCount = 0;
         isCalledOnce = false; //一回だけ呼び出すために bool配置
         CreateQuestion();
     }
 
-    void ExtractTextInt()
-    {
-        //Debug.Log(textMeshProUGUI_0.text);
-        string x = textMeshProUGUI_0.text;
-        int y = Convert.ToInt32(x);
-        Debug.Log(y.GetType());
-        Debug.Log(y);
-    }
+    //void ExtractTextInt()
+    //{
+    //    //Debug.Log(textMeshProUGUI_0.text);
+    //    string x = textMeshProUGUI_0.text;
+    //    int y = Convert.ToInt32(x);
+    //    Debug.Log(y.GetType());
+    //    Debug.Log(y);
+    //}
 
     void ShowCorrectSE()
     {
@@ -278,5 +271,23 @@ public class Mushikuizan : MonoBehaviour
     public void ToTitleButton()
     {
         SceneManager.LoadScene("Select");
+        MushikuiMoney.instance.Save();
     }
+
+    public void BackButton()
+    {
+        backPanel.SetActive(true);
+    }
+    public void YesButton()
+    {
+        SceneManager.LoadScene("Select");
+    }
+    public void NoButton()
+    {
+        backPanel.SetActive(false);
+    }
+
+    
+
+    
 }
