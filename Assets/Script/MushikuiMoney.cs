@@ -14,6 +14,7 @@ public class MushikuiMoney : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            Load();
         }
         else
         {

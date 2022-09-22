@@ -14,6 +14,10 @@ public class Sushikuizan : MonoBehaviour
     public TextMeshProUGUI leftNumberText;
     public TextMeshProUGUI rightNumberText;
 
+    [SerializeField] SushiTana leftSushiTuna;
+    [SerializeField] SushiTana sumSushiTuna;
+    [SerializeField] DragSushiTana rightSushiTana;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +36,15 @@ public class Sushikuizan : MonoBehaviour
         sumNumber = UnityEngine.Random.Range(1, 11); // 答えは、１〜１０までの数字をランダムで抽出する
         //Debug.Log(sumNumber);
         sumNumberText.text = sumNumber.ToString();
+        sumSushiTuna.SetSushiImages(sumNumber);
         leftNumber = UnityEngine.Random.Range(0, sumNumber+1); ; //左の数字は、０〜sumNumner+1まで⇨右辺だけでなく、左辺も10になったら、テキストが黒板からはみ出すからsumNumberにした
         //Debug.Log(leftNumber);
         leftNumberText.text = leftNumber.ToString();
-        SetLeftSushi(leftNumber);
+        leftSushiTuna.SetSushiImages(leftNumber);
         rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
         Debug.Log(rightNumber);
         rightNumberText.text = rightNumber.ToString();
+        rightSushiTana.SetSushiImages(0);
     }
 
     void SetLeftSushi(int sushi)
