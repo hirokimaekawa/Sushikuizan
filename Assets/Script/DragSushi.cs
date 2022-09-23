@@ -23,6 +23,7 @@ public class DragSushi : MonoBehaviour,IDragHandler ,IBeginDragHandler,IEndDragH
     {
         transform.SetParent(defaultParent, false);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+        transform.localPosition = Vector3.zero;
 
     }
 }

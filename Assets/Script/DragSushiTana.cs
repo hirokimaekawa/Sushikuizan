@@ -49,7 +49,10 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
         DragSushi dragSushi = eventData.pointerDrag.GetComponent<DragSushi>();
         if (dragSushi)
         {
-            Destroy(dragSushi.gameObject);
+            //Destroy(dragSushi.gameObject);
+            //transform.SetParent(dragSushi.defaultParent.parent, false);
+            dragSushi.transform.localPosition = Vector3.zero;
+            dragSushi.gameObject.SetActive(false); // 寿司は消えるが、元の場所に戻らない
             AddSushi();
         }
     }

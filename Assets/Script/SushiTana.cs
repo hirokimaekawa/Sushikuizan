@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SushiTana : MonoBehaviour,IDragHandler
+public class SushiTana : MonoBehaviour
 {
-    [SerializeField] bool canMove;
+   
     int count;
     [SerializeField] Image[] images;
 
@@ -48,19 +48,5 @@ public class SushiTana : MonoBehaviour,IDragHandler
     {
         count--;
         SetSushiImages(count);
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (!canMove)
-        {
-            return;
-        }
-        DragSushi dragSushi = eventData.pointerEnter.GetComponent<DragSushi>();
-        if (dragSushi)
-        {
-            Destroy(dragSushi.gameObject);
-            AddSushi();
-        }
     }
 }
