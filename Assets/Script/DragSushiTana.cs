@@ -8,22 +8,22 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
 {
 
     [SerializeField] bool canMove;
-    int count;
-    [SerializeField] Image[] images;
+    public int count;
+    public Image[] sushiTanaImages;
     
     
     public void SetSushiImages(int count)
     {
         this.count = count;
-        for (int i = 0; i < images.Length; i++)
+        for (int i = 0; i < sushiTanaImages.Length; i++)
         {
             if (i < count)
             {
-                images[i].gameObject.SetActive(true);
+                sushiTanaImages[i].gameObject.SetActive(true);
             }
             else
             {
-                images[i].gameObject.SetActive(false);
+                sushiTanaImages[i].gameObject.SetActive(false);
             }
         }
 
@@ -50,7 +50,7 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
         if (dragSushi)
         {
             //Destroy(dragSushi.gameObject);
-            //transform.SetParent(dragSushi.defaultParent.parent, false);
+            dragSushi.transform.SetParent(dragSushi.defaultParent, false);
             dragSushi.transform.localPosition = Vector3.zero;
             dragSushi.gameObject.SetActive(false); // 寿司は消えるが、元の場所に戻らない
             AddSushi();
