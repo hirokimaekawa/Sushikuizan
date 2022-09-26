@@ -13,8 +13,8 @@ public class SelectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MushikuiMoney.instance.Load();
-        currentMoney = currentMoney + MushikuiMoney.instance.getMoney;
+        Money.instance.Load();
+        currentMoney = currentMoney + Money.instance.getMoney;
         curerntMoneyText.text = currentMoney.ToString();
 
     }
@@ -28,5 +28,10 @@ public class SelectManager : MonoBehaviour
     public void LoadMushikuizan()
     {
         SceneManager.LoadScene("Mushikuizan");
+    }
+
+    public void LoadSushikuizan()
+    {
+        SceneManager.LoadScene("Sushikuizan");
     }
 }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Select.unity
     guid: c01fccba2b1534d94bfaee7bf513b6d8
+  - enabled: 1
+    path: Assets/Scenes/Sushikuizan.unity
+    guid: 56be563cb34f24ac0877d27ac1919fb0
   m_configObjects: {}

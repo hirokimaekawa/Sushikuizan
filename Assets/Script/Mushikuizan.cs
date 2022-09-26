@@ -51,7 +51,7 @@ public class Mushikuizan : MonoBehaviour
         if (questionCount == 10 && isCalledOnce ==false)
         {
             finishPanel.SetActive(true);
-            MushikuiMoney.instance.getMoney += 10;
+            Money.instance.getMoney += 10;
             audioSource.PlayOneShot(successSE);  //Updateに入っているから、ずっと鳴りっぱなし。
             isCalledOnce = true;
         }
@@ -110,15 +110,6 @@ public class Mushikuizan : MonoBehaviour
         isCalledOnce = false; //一回だけ呼び出すために bool配置
         CreateQuestion();
     }
-
-    //void ExtractTextInt()
-    //{
-    //    //Debug.Log(textMeshProUGUI_0.text);
-    //    string x = textMeshProUGUI_0.text;
-    //    int y = Convert.ToInt32(x);
-    //    Debug.Log(y.GetType());
-    //    Debug.Log(y);
-    //}
 
     void ShowCorrectSE()
     {
@@ -271,7 +262,7 @@ public class Mushikuizan : MonoBehaviour
     public void ToTitleButton()
     {
         SceneManager.LoadScene("Select");
-        MushikuiMoney.instance.Save();
+        Money.instance.Save();
     }
 
     public void BackButton()

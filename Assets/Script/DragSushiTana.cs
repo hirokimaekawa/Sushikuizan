@@ -10,8 +10,15 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
     [SerializeField] bool canMove;
     public int count;
     public Image[] sushiTanaImages;
-    
-    
+    AudioSource audioSource;
+    public AudioClip popSushiSE;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     public void SetSushiImages(int count)
     {
         this.count = count;
@@ -33,6 +40,7 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
     {
         count++;
         SetSushiImages(count);
+        audioSource.PlayOneShot(popSushiSE);
     }
 
     public void RemoveSushi()

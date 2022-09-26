@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushikuiMoney : MonoBehaviour
+public class Money : MonoBehaviour
 {
 
-    public static MushikuiMoney instance;
+    public static Money instance;
     public int getMoney;
     //これを作らないと、Load（）を実行しても、インスタンスがないよって警告が出る
     private void Awake()

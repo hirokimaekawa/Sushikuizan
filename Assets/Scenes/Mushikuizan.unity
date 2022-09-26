@@ -6390,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739629917634997522, guid: e7ab7b7a0e0724aad8156b68f61ea0db, type: 3}
       propertyPath: m_Name
-      value: MushikuiMoney
+      value: Money
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ab7b7a0e0724aad8156b68f61ea0db, type: 3}

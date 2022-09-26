@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3739629917634997520}
   - component: {fileID: 3739629917634997521}
   m_Layer: 0
-  m_Name: MushikuiMoney
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
