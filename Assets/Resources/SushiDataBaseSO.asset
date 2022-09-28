@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7981836dac7406e9557872339c7ca8, type: 3}
+  m_Name: SushiDataBaseSO
+  m_EditorClassIdentifier: 
+  sushiDatas:
+  - sushiID: 0
+    sprite: {fileID: 21300000, guid: 6db270d2a4c304ea5b2946b67f6aa2e5, type: 3}
+    name: "\u307E\u3050\u308D"
+  - sushiID: 1
+    sprite: {fileID: 21300000, guid: 522f3638d338d4512a478cb4caf33d6c, type: 3}
+    name: "\u30B5\u30FC\u30E2\u30F3"
+  - sushiID: 2
+    sprite: {fileID: 21300000, guid: 25c4700b8c3b04dd98936245b3a26198, type: 3}
+    name: "\u3044\u304F\u3089"
+  - sushiID: 3
+    sprite: {fileID: 21300000, guid: 7724fd4be4a414c4e89510882f8dcd1c, type: 3}
+    name: "\u4E2D\u30C8\u30ED"
+  - sushiID: 4
+    sprite: {fileID: 21300000, guid: f10d219941e694965af268e200dd88e3, type: 3}
+    name: "\u3046\u306B"
+  - sushiID: 5
+    sprite: {fileID: 21300000, guid: 10938e127618d4a6a9ee929d331ebb8f, type: 3}
+    name: "\u3042\u307E\u30A8\u30D3"
+  - sushiID: 6
+    sprite: {fileID: 21300000, guid: 67af09a9a81c146f68c34f6080c9fd63, type: 3}
+    name: "\u306F\u307E\u3061"
+  - sushiID: 7
+    sprite: {fileID: 21300000, guid: 42f2ef514b4aa4582a77add954b335e5, type: 3}
+    name: "\u30CD\u30AE\u30C8\u30ED"
+  - sushiID: 8
+    sprite: {fileID: 21300000, guid: 5ab6cf2cd8e2d442f8956f5e4621d867, type: 3}
+    name: "\u305F\u307E\u3054"
+  - sushiID: 9
+    sprite: {fileID: 21300000, guid: 93f1e42ce9ea249e8bdeb002c4a9e202, type: 3}
+    name: "\u30DB\u30BF\u30C6"
+  - sushiID: 10
+    sprite: {fileID: 21300000, guid: 2990677f3465c4e94a392f21df8222ee, type: 3}
+    name: "\u30B3\u30FC\u30F3"
+  - sushiID: 11
+    sprite: {fileID: 21300000, guid: 1ff90ddc8db79419796ec55dab9f7127, type: 3}
+    name: "\u306A\u3063\u3068\u3046"
+  - sushiID: 12
+    sprite: {fileID: 21300000, guid: b4d3afa00a0664f3d8d86aed0662e372, type: 3}
+    name: "\u307E\u3050\u308D\u30E6\u30C3\u30B1"
+  - sushiID: 13
+    sprite: {fileID: 21300000, guid: 38faf56b5bee24087b2dc5c4ed64e8ff, type: 3}
+    name: "\u3059\u3058\u3053"
+  - sushiID: 14
+    sprite: {fileID: 21300000, guid: f550c3abec9174c7a8616965f78efc6c, type: 3}
+    name: "\u3057\u3089\u3059"
+  - sushiID: 15
+    sprite: {fileID: 21300000, guid: efeb4538790874ec68b31680491b4158, type: 3}
+    name: "\u30A8\u30D3\u30DE\u30E8"
+  - sushiID: 16
+    sprite: {fileID: 21300000, guid: f19c6a4960caf44409aa84e0b97c8450, type: 3}
+    name: "\u30C4\u30CA\u30DE\u30E8"
+  - sushiID: 17
+    sprite: {fileID: 21300000, guid: d48d0d3256a8a4fdeb03349ce1cc0d3f, type: 3}
+    name: "\u6E29\u6CC9\u305F\u307E\u3054"
+  - sushiID: 18
+    sprite: {fileID: 21300000, guid: 6a754afeca3d4445fb9e4e91d2982a67, type: 3}
+    name: "\u3081\u3093\u305F\u3044\u3053"
+  - sushiID: 19
+    sprite: {fileID: 21300000, guid: bb303b97c2fa64883a7f8e5a17235444, type: 3}
+    name: "\u305F\u3053"
+  - sushiID: 20
+    sprite: {fileID: 21300000, guid: 5ac3dc96fc1444c439352f51e87f55e0, type: 3}
+    name: "\u3066\u3063\u304B\u307E\u304D"
+  - sushiID: 21
+    sprite: {fileID: 21300000, guid: 0c227562d074047dfb08a16b14b716a6, type: 3}
+    name: "\u3057\u3081\u30B5\u30D0"
+  - sushiID: 22
+    sprite: {fileID: 21300000, guid: 3bb3ee05c3b964ce1b5f347976f0f00e, type: 3}
+    name: "\u30AB\u30C3\u30D1"
+  - sushiID: 23
+    sprite: {fileID: 21300000, guid: 0b54f996645b146aab635879fb80fa18, type: 3}
+    name: "\u3042\u306A\u3054"
+  - sushiID: 24
+    sprite: {fileID: 21300000, guid: 5bd92e3db0a3a492983dfbc05a796da7, type: 3}
+    name: "\u3042\u3058"
+  - sushiID: 25
+    sprite: {fileID: 21300000, guid: d8dceb7c29ba74f159a53d3c2b22f112, type: 3}
+    name: "\u3044\u304B"
+  - sushiID: 26
+    sprite: {fileID: 21300000, guid: 1448ace7db9b04c408c13897f89db496, type: 3}
+    name: "\u304B\u305A\u306E\u3053"
+  - sushiID: 27
+    sprite: {fileID: 21300000, guid: f2bdca89756824efa8908be9a3f15c90, type: 3}
+    name: "\u30AB\u30C4\u30AA"
+  - sushiID: 28
+    sprite: {fileID: 21300000, guid: 4824f0a146f2949b99cbdff9dc25162a, type: 3}
+    name: "\u304B\u306B"
+  - sushiID: 29
+    sprite: {fileID: 21300000, guid: 5ea9882ab95954e1ead369a1cb1282f6, type: 3}
+    name: "\u5927\u30C8\u30ED"

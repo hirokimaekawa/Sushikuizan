@@ -34,4 +34,9 @@ public class SelectManager : MonoBehaviour
     {
         SceneManager.LoadScene("Sushikuizan");
     }
+
+    public void LoadOption()
+    {
+        SceneManager.LoadScene("Option");
+    }
 }
