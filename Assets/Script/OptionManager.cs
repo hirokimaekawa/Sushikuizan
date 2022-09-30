@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class OptionManager : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class OptionManager : MonoBehaviour
     public Image setSushiImage;
     Image getSushiImage;
     public Image selectSushiImage;
+    public TextMeshProUGUI sushiSelectText;
+
 
     SushiID selectedID;
 
@@ -29,14 +33,13 @@ public class OptionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //getSushiImage = GetComponent<Image>();
         if (PlayerPrefs.HasKey("SUSHI_IMAGE_ID"))
         {
             int sushiImageID = PlayerPrefs.GetInt("SUSHI_IMAGE_ID", 0);
-            Debug.Log("あ"+sushiImageID);
-            Debug.Log("い" + (SushiID)sushiImageID);
             setSushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData((SushiID)sushiImageID).sprite;
         }
+        //最初は、パネル０
+        panelNumber = Panel_0;
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class OptionManager : MonoBehaviour
         //selectedSprite = sprite;
         SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
         Debug.Log(sushiData.name);
+        sushiSelectText.text = sushiData.name+"にしますか？";
         selectSushiImage.sprite = sushiData.sprite;
         sushiPanel.SetActive(true);
     }
@@ -72,4 +76,47 @@ public class OptionManager : MonoBehaviour
     {
         SceneManager.LoadScene("Select");
     }
+
+    public GameObject panelParent;
+    public const int Panel_0 = 1;
+    public const int Panel_1 = 2;
+    public const int Panel_2 = 3;
+    int panelNumber;
+
+    public void OnRightArrow()
+    {
+        panelNumber++;
+        if (panelNumber > Panel_2)
+        {
+            panelNumber = Panel_0;
+        }
+        DisPlaySushiPanel();
+    }
+     public void OnLeftArrow()
+    {
+        panelNumber--;
+        if (panelNumber < Panel_0)
+        {
+            panelNumber = Panel_2;
+        }
+        DisPlaySushiPanel();
+    }
+
+    void DisPlaySushiPanel()
+    {
+        //パネルをあと7個作って、case,breakをする
+        switch (panelNumber)
+        {
+            case Panel_0:
+                panelParent.transform.localPosition = new Vector2(0,0);
+                break;
+            case Panel_1:
+                panelParent.transform.localPosition = new Vector2(-2000,0);
+                break;
+            case Panel_2:
+                panelParent.transform.localPosition = new Vector2(-4000, 0);
+                break;
+        }
+    }
 }
+ 

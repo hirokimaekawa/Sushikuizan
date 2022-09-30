@@ -24,6 +24,7 @@ public class OptionSettingSushi : MonoBehaviour
 
     public void OnClick()
     {
+        Debug.Log(sushiID);
         OptionManager.instance.ShowSushiPanel(sushiID);
     }
 }
