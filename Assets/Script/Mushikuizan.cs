@@ -20,7 +20,8 @@ public class Mushikuizan : MonoBehaviour
     public TextMeshProUGUI leftNumberText;
     public TextMeshProUGUI rightNumberText;
     public GameObject squareText;　　//Textだけど、GameObject型で取得した
-    public GameObject answerImage;
+    public GameObject correctAnwser;
+    public GameObject inCorrectAnwser;
     public GameObject finishPanel;
     public GameObject backPanel;
     
@@ -64,7 +65,7 @@ public class Mushikuizan : MonoBehaviour
         sumNumber = UnityEngine.Random.Range(1,11); // 答えは、１〜１０までの数字をランダムで抽出する
         //Debug.Log(sumNumber);
         sumNumberText.text = sumNumber.ToString();
-        leftNumber = UnityEngine.Random.Range(0, sumNumber); //左の数字は、０〜sumNumner+1まで⇨右辺だけでなく、左辺も10になったら、テキストが黒板からはみ出すからsumNumberにした
+        leftNumber = UnityEngine.Random.Range(0, sumNumber+1); //左の数字は、０〜sumNumner+1まで⇨右辺だけでなく、左辺も10になったら、テキストが黒板からはみ出すからsumNumberにした 10月1日、はみ出てもいい。イラストで横長の黒板にする
         //Debug.Log(leftNumber);
         leftNumberText.text = leftNumber.ToString();
         rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
@@ -79,7 +80,7 @@ public class Mushikuizan : MonoBehaviour
             ShowCorrectSE();
             squareText.SetActive(false);
             rightNumberText.text = rightNumber.ToString();
-            answerImage.SetActive(true);
+            correctAnwser.SetActive(true);
             questionCount++;
             Debug.Log("カウントは"+ questionCount);
             yield return new WaitForSeconds(1.0f);
@@ -90,7 +91,7 @@ public class Mushikuizan : MonoBehaviour
             ShowCorrectSE();
             squareText.SetActive(false);
             rightNumberText.text = rightNumber.ToString();
-            answerImage.SetActive(true);
+            correctAnwser.SetActive(true);
             questionCount++;
             Debug.Log(" 最後のカウントは" + questionCount);
         }
@@ -101,7 +102,7 @@ public class Mushikuizan : MonoBehaviour
     {
         squareText.SetActive(true);
         rightNumberText.text = "";
-        answerImage.SetActive(false);
+        correctAnwser.SetActive(false);
     }
 
     void Reset()
@@ -116,9 +117,12 @@ public class Mushikuizan : MonoBehaviour
         audioSource.PlayOneShot(correctSE);
     }
 
-    void ShowInCorrectSE()
+    IEnumerator ShowInCorrect()
     {
         audioSource.PlayOneShot(incorrectSE);
+        inCorrectAnwser.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        inCorrectAnwser.SetActive(false);
     }
 
     public void SelectNumber_0()
@@ -130,7 +134,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_1()
@@ -142,7 +146,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_2()
@@ -154,7 +158,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_3()
@@ -166,7 +170,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_4()
@@ -178,7 +182,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_5()
@@ -190,7 +194,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_6()
@@ -202,7 +206,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_7()
@@ -214,7 +218,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_8()
@@ -226,7 +230,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_9()
@@ -238,7 +242,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void SelectNumber_10()
@@ -250,7 +254,7 @@ public class Mushikuizan : MonoBehaviour
         }
         else
         {
-            ShowInCorrectSE();
+            StartCoroutine(ShowInCorrect());
         }
     }
     public void RetryButton()

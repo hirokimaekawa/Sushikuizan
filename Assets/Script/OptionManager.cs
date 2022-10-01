@@ -14,6 +14,9 @@ public class OptionManager : MonoBehaviour
     Image getSushiImage;
     public Image selectSushiImage;
     public TextMeshProUGUI sushiSelectText;
+    public GameObject sushiBuyPanel;
+    public Image buySushiImage;
+    public TextMeshProUGUI sushiBuyText;
 
 
     SushiID selectedID;
@@ -21,6 +24,9 @@ public class OptionManager : MonoBehaviour
     //Sprite selectedSprite;
 
     public static OptionManager instance;
+
+    int currentMoney = 100;
+    public TextMeshProUGUI curerntMoneyText;
 
     private void Awake()
     {
@@ -40,6 +46,11 @@ public class OptionManager : MonoBehaviour
         }
         //最初は、パネル０
         panelNumber = Panel_0;
+
+        Money.instance.Load();
+        currentMoney = currentMoney + Money.instance.getMoney;
+        curerntMoneyText.text = currentMoney.ToString();
+
     }
 
     // Update is called once per frame
@@ -53,10 +64,38 @@ public class OptionManager : MonoBehaviour
         selectedID = sushiID;
         //selectedSprite = sprite;
         SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
-        Debug.Log(sushiData.name);
+         //Debug.Log(sushiData.name);
         sushiSelectText.text = sushiData.name+"にしますか？";
         selectSushiImage.sprite = sushiData.sprite;
         sushiPanel.SetActive(true);
+    }
+
+    public void ShowBuySushiPanel(SushiID sushiID)
+    {
+        selectedID = sushiID;
+        SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
+        sushiBuyText.text = sushiData.name + "を買いますか？";
+        buySushiImage.sprite = sushiData.sprite;
+        sushiBuyPanel.SetActive(true);
+    }
+
+     //public bool isBought = false;
+
+    public void BuyButton()
+    {
+        sushiBuyPanel.SetActive(false);
+        if (currentMoney >= 100)
+        {
+            currentMoney -= 100;
+            //isBought = true;
+            //こっちでOptionSettingSushiの持つSushiDataのBoughtをTrueにしたとして、OptionSettingSushi.csのif文がきちんと反応できるのか、現状できていない。このやり方が違う可能性がある。
+            OptionSettingSushi.instance.sushiData.bought = true;
+        }
+    }
+
+    public void NotBuyButton()
+    {
+        sushiBuyPanel.SetActive(false);
     }
 
     public void DecideButton()

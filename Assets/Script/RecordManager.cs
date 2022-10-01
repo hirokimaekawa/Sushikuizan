@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
-public class SelectManager : MonoBehaviour
+public class RecordManager : MonoBehaviour
 {
 
     int currentMoney = 100;
@@ -15,33 +16,17 @@ public class SelectManager : MonoBehaviour
     {
         Money.instance.Load();
         currentMoney = currentMoney + Money.instance.getMoney;
-        curerntMoneyText.text = currentMoney.ToString();
-
+        curerntMoneyText.text = currentMoney.ToString(); //ゆくゆく残数のゼニーと通算獲得のゼニーを分けて考える必要がある
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public void LoadMushikuizan()
-    {
-        SceneManager.LoadScene("Mushikuizan");
     }
-
-    public void LoadSushikuizan()
+    public void BackButton()
     {
-        SceneManager.LoadScene("Sushikuizan");
-    }
-
-    public void LoadOption()
-    {
-        SceneManager.LoadScene("SushiOption");
-    }
-
-    public void LoadReward()
-    {
-        SceneManager.LoadScene("Record");
+        SceneManager.LoadScene("Select");
     }
 }
+

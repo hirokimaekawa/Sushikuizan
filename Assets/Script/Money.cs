@@ -32,9 +32,4 @@ public class Money : MonoBehaviour
     {
         getMoney = PlayerPrefs.GetInt(SEVEKEY, getMoney);
     }
-    //[SerializeField]
-    //public class JsonModel
-    //{
-    //    [SerializeField] int currentMoney;
-    //}
 }

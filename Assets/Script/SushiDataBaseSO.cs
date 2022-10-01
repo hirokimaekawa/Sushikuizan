@@ -48,6 +48,7 @@ public class SushiData
     public SushiID sushiID;
     public Sprite sprite;
     public string name;
+    public bool bought;
 }
 public enum SushiID
 {
