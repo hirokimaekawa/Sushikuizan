@@ -64,6 +64,7 @@ public class OptionSettingSushi : MonoBehaviour
 
     }
 
+    //自分自身を宣言して、自分自身をShowBuySushiPanelでOptionManagerに渡す
     public OptionSettingSushi optionSettingSushi;
 
     public void OnClick()
