@@ -18,6 +18,10 @@ public class OptionSettingSushi : MonoBehaviour
     [SerializeField]Image sushiImage;
 
 
+   
+    
+
+
     private void Awake()
     {
         if (instance == null)
@@ -32,24 +36,35 @@ public class OptionSettingSushi : MonoBehaviour
 
         if (!sushiData.bought)
         {
+            
             sushiImage.color = Color.black;
         }
     }
 
     private void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        // このif文を実行したい
-        if (sushiData.bought)
+        //// このif文を実行したい
+        //if (sushiData.bought)
+        //{
+        //    //Debug.Log(sushiData.bought);
+        //    sushiImage.color = new Color(255, 255, 255);
+        //}
+        ////あまり意味がない
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            sushiImage.color = new Color(255, 255, 255);
+            //    Debug.Log(sushiData.bought);
+            OptionManager.instance.Test(optionSettingSushi);
         }
+
     }
+
+    public OptionSettingSushi optionSettingSushi;
 
     public void OnClick()
     {
@@ -60,9 +75,18 @@ public class OptionSettingSushi : MonoBehaviour
         }
         else
         {
-            OptionManager.instance.ShowBuySushiPanel(sushiID);
+            OptionManager.instance.ShowBuySushiPanel(sushiID,optionSettingSushi);
             
         }
+    }
 
+    public void ReturnColor(OptionSettingSushi optionSettingSushi)
+    {
+        sushiImage.color = new Color(255, 255, 255);
+    }
+
+    public void JudgeBuy(bool bought)
+    {
+        sushiData.bought = true;
     }
 }

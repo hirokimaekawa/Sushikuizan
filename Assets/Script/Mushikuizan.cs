@@ -53,6 +53,7 @@ public class Mushikuizan : MonoBehaviour
         {
             finishPanel.SetActive(true);
             Money.instance.getMoney += 10;
+            Money.instance.mushikuiPlayCount += 1;
             audioSource.PlayOneShot(successSE);  //Updateに入っているから、ずっと鳴りっぱなし。
             isCalledOnce = true;
         }

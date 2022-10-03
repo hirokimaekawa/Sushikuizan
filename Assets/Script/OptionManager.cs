@@ -21,6 +21,8 @@ public class OptionManager : MonoBehaviour
 
     SushiID selectedID;
 
+    public OptionSettingSushi selectedOptionSettingSushiID;
+
     //Sprite selectedSprite;
 
     public static OptionManager instance;
@@ -56,7 +58,10 @@ public class OptionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
     }
 
     public void ShowSushiPanel(SushiID sushiID)
@@ -70,8 +75,9 @@ public class OptionManager : MonoBehaviour
         sushiPanel.SetActive(true);
     }
 
-    public void ShowBuySushiPanel(SushiID sushiID)
+    public void ShowBuySushiPanel(SushiID sushiID,OptionSettingSushi optionSettingSushiID)
     {
+        selectedOptionSettingSushiID = optionSettingSushiID;
         selectedID = sushiID;
         SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
         sushiBuyText.text = sushiData.name + "を買いますか？";
@@ -79,8 +85,9 @@ public class OptionManager : MonoBehaviour
         sushiBuyPanel.SetActive(true);
     }
 
-     //public bool isBought = false;
+    //public bool isBought = false;
 
+    bool bought;
     public void BuyButton()
     {
         sushiBuyPanel.SetActive(false);
@@ -89,9 +96,18 @@ public class OptionManager : MonoBehaviour
             currentMoney -= 100;
             //isBought = true;
             //こっちでOptionSettingSushiの持つSushiDataのBoughtをTrueにしたとして、OptionSettingSushi.csのif文がきちんと反応できるのか、現状できていない。このやり方が違う可能性がある。
-            OptionSettingSushi.instance.sushiData.bought = true;
+            bought = true;
+            // ↓これは、不採用
+            OptionSettingSushi.instance.ReturnColor(selectedOptionSettingSushiID);
         }
     }
+
+    public void Test(OptionSettingSushi PersonalOptionSettingSushi)
+    {
+        //optionSettingSushi = PersonalOptionSettingSushi;
+        //OptionSettingSushi.instance.ReturnColor();
+    }
+
 
     public void NotBuyButton()
     {

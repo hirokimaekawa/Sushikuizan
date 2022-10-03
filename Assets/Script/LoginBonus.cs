@@ -52,8 +52,8 @@ public class LoginBonus : MonoBehaviour
                 //初ログインボーナス　lastDateに0が入っていたら処理実行
                 if (lastDate == (int)LOGIN_TYPE.FIRST_USER_LOGIN)
                 {
-                    //初ログインボーナス処理 ここに自分で描くんだぞ！
-
+                     Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
+                    //TitleManager.instance.ShowFirstLoginPanel();
                 }
                 else
                 {
