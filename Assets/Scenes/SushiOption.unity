@@ -493,6 +493,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77655999}
   m_CullTransparentMesh: 1
+--- !u!114 &90862574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3431952810616951017, guid: 8ff2ffa46577443cd81c807de325b6e7, type: 3}
+  m_PrefabInstance: {fileID: 3431952810028041430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109bf92a3a1da4d42aef5db194feee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &134787027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,6 +3343,7 @@ MonoBehaviour:
   sushiBuyPanel: {fileID: 2056290184}
   buySushiImage: {fileID: 1729820014}
   sushiBuyText: {fileID: 462293066}
+  selectedOptionSettingSushiID: {fileID: 0}
   curerntMoneyText: {fileID: 1548134418}
   panelParent: {fileID: 2046387548}
 --- !u!222 &1990771668
@@ -3629,6 +3641,10 @@ PrefabInstance:
       propertyPath: sushiData.bought
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3431952810616951017, guid: 8ff2ffa46577443cd81c807de325b6e7, type: 3}
+      propertyPath: optionSettingSushi
+      value: 
+      objectReference: {fileID: 90862574}
     - target: {fileID: 3431952810616951019, guid: 8ff2ffa46577443cd81c807de325b6e7, type: 3}
       propertyPath: m_Color.b
       value: 1

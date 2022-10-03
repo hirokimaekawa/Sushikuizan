@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curerntMoneyText: {fileID: 129514440}
+  mushikuiPlayCountText: {fileID: 1692444636}
+  sushikuiPlayCountText: {fileID: 1927083479}
 --- !u!4 &113586822
 Transform:
   m_ObjectHideFlags: 0
