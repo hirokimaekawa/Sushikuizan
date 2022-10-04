@@ -76,7 +76,7 @@ public class OptionSettingSushi : MonoBehaviour
         }
         else
         {
-            OptionManager.instance.ShowBuySushiPanel(sushiID,optionSettingSushi);
+            OptionManager.instance.ShowBuySushiPanel(sushiID,this.optionSettingSushi);
             
         }
     }
