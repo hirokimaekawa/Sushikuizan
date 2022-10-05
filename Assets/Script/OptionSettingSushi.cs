@@ -33,7 +33,7 @@ public class OptionSettingSushi : MonoBehaviour
         sushiImage = GetComponent<Image>();
 
         sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sprite;
-
+        //違う方法で、boughtを判定し、該当する寿司を真っ黒にする。
         if (!sushiData.bought)
         {
             
@@ -81,6 +81,7 @@ public class OptionSettingSushi : MonoBehaviour
         }
     }
 
+    //色を元に戻す関数を作った
     public void ReturnColor(OptionSettingSushi optionSettingSushi)
     {
         sushiImage.color = new Color(255, 255, 255);
