@@ -6,89 +6,56 @@ using UnityEngine.UI;
 public class OptionSettingSushi : MonoBehaviour
 {
 
-    public static OptionSettingSushi instance;
+    //public static OptionSettingSushi instance;
 
     //Sprite sprite;
     public SushiID sushiID;
 
     public SushiData sushiData;
 
-    bool isBought;
-
     [SerializeField]Image sushiImage;
-
-
-   
-    
 
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
+      
         //sprite = GetComponent<Image>().sprite;
         sushiImage = GetComponent<Image>();
 
         sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sprite;
-        //違う方法で、boughtを判定し、該当する寿司を真っ黒にする。
-        if (!sushiData.bought)
-        {
-            
-            sushiImage.color = Color.black;
-        }
-    }
-
-    private void Start()
-    {
        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        //// このif文を実行したい
-        //if (sushiData.bought)
-        //{
-        //    //Debug.Log(sushiData.bought);
-        //    sushiImage.color = new Color(255, 255, 255);
-        //}
-        ////あまり意味がない
-        if (Input.GetKeyDown(KeyCode.A))
+        //違う方法で、boughtを判定し、該当する寿司を真っ黒にする。
+        if ((PlayerPrefs.GetInt("BOUGHT_KEY" + sushiID, OptionManager.No_BOUGHT) == OptionManager.BOUGHT))
         {
-            //    Debug.Log(sushiData.bought);
-            OptionManager.instance.Test(optionSettingSushi);
+
         }
+        else
+        {
+            sushiImage.color = Color.black;
 
+        }
     }
-
-    //自分自身を宣言して、自分自身をShowBuySushiPanelでOptionManagerに渡す
-    public OptionSettingSushi optionSettingSushi;
 
     public void OnClick()
     {
-        Debug.Log(sushiID);
-        if (sushiData.bought)
+        if ((PlayerPrefs.GetInt("BOUGHT_KEY" + sushiID, OptionManager.No_BOUGHT)==OptionManager.BOUGHT))
         {
             OptionManager.instance.ShowSushiPanel(sushiID);
         }
         else
         {
-            OptionManager.instance.ShowBuySushiPanel(sushiID,this.optionSettingSushi);
+            OptionManager.instance.ShowBuySushiPanel(sushiID,this);
             
         }
     }
 
     //色を元に戻す関数を作った
-    public void ReturnColor(OptionSettingSushi optionSettingSushi)
+    public void ReturnColor()
     {
         sushiImage.color = new Color(255, 255, 255);
-    }
-
-    public void JudgeBuy(bool bought)
-    {
-        sushiData.bought = true;
     }
 }

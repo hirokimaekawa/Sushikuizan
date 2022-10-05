@@ -155,6 +155,7 @@ MonoBehaviour:
   curerntMoneyText: {fileID: 129514440}
   mushikuiPlayCountText: {fileID: 1692444636}
   sushikuiPlayCountText: {fileID: 1927083479}
+  buyTotalSushiCountText: {fileID: 1274617172}
 --- !u!4 &113586822
 Transform:
   m_ObjectHideFlags: 0
@@ -1027,7 +1028,7 @@ RectTransform:
   m_GameObject: {fileID: 1213848228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9385307, y: 1.9385307, z: 1.9385307}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 322694904}
@@ -1055,7 +1056,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1334, y: 750}
+  m_SizeDelta: {x: 1334, y: 20.634184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213848230
 MonoBehaviour:
@@ -1404,7 +1405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "3\u500B"
+  m_text: "1\u500B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f013d0fdd77b446ca96c91f8753b9a52, type: 2}
   m_sharedMaterial: {fileID: -208329095835373983, guid: f013d0fdd77b446ca96c91f8753b9a52, type: 2}

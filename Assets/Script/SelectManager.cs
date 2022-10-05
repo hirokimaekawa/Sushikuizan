@@ -7,16 +7,21 @@ using TMPro;
 public class SelectManager : MonoBehaviour
 {
 
-    int currentMoney = 100;
-    public TextMeshProUGUI curerntMoneyText;
+    int totalMoney = 100;
+    public TextMeshProUGUI  currentMoneyText;
+    int curentMoney = 100;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("所持金" + Money.instance.currentMoney);
         Money.instance.Load();
-        currentMoney = currentMoney + Money.instance.getMoney;
-        curerntMoneyText.text = currentMoney.ToString();
+        totalMoney = totalMoney + Money.instance.getMoney; //これまでの累積マネー
 
+        curentMoney = curentMoney + Money.instance.currentMoney;
+        currentMoneyText.text = curentMoney.ToString();
+        Debug.Log("所持金" + Money.instance.currentMoney);
     }
 
     // Update is called once per frame

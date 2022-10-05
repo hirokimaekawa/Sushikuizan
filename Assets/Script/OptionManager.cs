@@ -18,12 +18,13 @@ public class OptionManager : MonoBehaviour
     public Image buySushiImage;
     public TextMeshProUGUI sushiBuyText;
 
-
+    public const int No_BOUGHT = 0;
+    public const int BOUGHT = 1;
     SushiID selectedID;
 
-    public OptionSettingSushi selectedOptionSettingSushiID;
+    OptionSettingSushi selectedOptionSettingSushiID;
 
-    //Sprite selectedSprite;
+    public OptionSettingSushi defaultSushi;
 
     public static OptionManager instance;
 
@@ -36,6 +37,9 @@ public class OptionManager : MonoBehaviour
         {
             instance = this;
         }
+
+        PlayerPrefs.SetInt("BOUGHT_KEY"+ defaultSushi.sushiID,BOUGHT);
+        PlayerPrefs.GetInt("BOUGHT_KEY" + defaultSushi.sushiID, BOUGHT);
     }
 
     // Start is called before the first frame update
@@ -50,18 +54,13 @@ public class OptionManager : MonoBehaviour
         panelNumber = Panel_0;
 
         Money.instance.Load();
-        currentMoney = currentMoney + Money.instance.getMoney;
-        curerntMoneyText.text = currentMoney.ToString();
+         currentMoney = currentMoney + Money.instance.currentMoney;
+        Debug.Log("現在のお金は？"+currentMoney);
+        //curerntMoneyText.text = currentMoney.ToString();
+        curerntMoneyText.text = Money.instance.currentMoney.ToString();
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
 
-        }
     }
 
     public void ShowSushiPanel(SushiID sushiID)
@@ -77,7 +76,7 @@ public class OptionManager : MonoBehaviour
 
     public void ShowBuySushiPanel(SushiID sushiID,OptionSettingSushi optionSettingSushiID)
     {
-        selectedOptionSettingSushiID = optionSettingSushiID;
+        selectedOptionSettingSushiID = optionSettingSushiID; //取得
         selectedID = sushiID;
         SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
         sushiBuyText.text = sushiData.name + "を買いますか？";
@@ -85,29 +84,27 @@ public class OptionManager : MonoBehaviour
         sushiBuyPanel.SetActive(true);
     }
 
+    public const int normalSushi = 30;
     //public bool isBought = false;
-
-    bool bought;
     public void BuyButton()
     {
         sushiBuyPanel.SetActive(false);
-        if (currentMoney >= 100)
+        if (Money.instance.currentMoney > 20)
         {
-            currentMoney -= 100;
-            //isBought = true;
-            //こっちでOptionSettingSushiの持つSushiDataのBoughtをTrueにしたとして、OptionSettingSushi.csのif文がきちんと反応できるのか、現状できていない。このやり方が違う可能性がある。
-            bought = true;
-            // ↓これは、不採用
-            OptionSettingSushi.instance.ReturnColor(selectedOptionSettingSushiID);
+            Debug.Log("現在のお金"+currentMoney);
+            //currentMoney -= normalSushi; // -30は保存しなくてもいい
+            selectedOptionSettingSushiID.ReturnColor();　// 使う
+            PlayerPrefs.SetInt("BOUGHT_KEY"+selectedOptionSettingSushiID.sushiID,BOUGHT);
+            Money.instance.buySushiCount += 1;
+            //currentMoney = currentMoney + Money.instance.currentMoney;
+            Money.instance.currentMoney -= normalSushi;
+            curerntMoneyText.text = currentMoney.ToString();
+           
+            Debug.Log("減った金額"+ normalSushi);
+            Money.instance.Save();
+            Debug.Log("保存した金額"+Money.instance.currentMoney);
         }
     }
-
-    public void Test(OptionSettingSushi PersonalOptionSettingSushi)
-    {
-        //optionSettingSushi = PersonalOptionSettingSushi;
-        //OptionSettingSushi.instance.ReturnColor();
-    }
-
 
     public void NotBuyButton()
     {
@@ -130,6 +127,7 @@ public class OptionManager : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene("Select");
+        Money.instance.Save();
     }
 
     public GameObject panelParent;

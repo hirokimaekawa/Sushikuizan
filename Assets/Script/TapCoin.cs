@@ -36,7 +36,6 @@ public class TapCoin : MonoBehaviour
         Debug.Log(sprite);
         coinImage.sprite = sprite;
         Debug.Log(sprite);
-
     }
 
     private void FixedUpdate()
