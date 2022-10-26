@@ -28,7 +28,7 @@ public class OptionManager : MonoBehaviour
 
     public static OptionManager instance;
 
-    int currentMoney = 100;
+    int currentMoney = 0;
     public TextMeshProUGUI curerntMoneyText;
 
     private void Awake()
@@ -92,7 +92,7 @@ public class OptionManager : MonoBehaviour
         if (Money.instance.currentMoney > 20)
         {
             Debug.Log("現在のお金"+currentMoney);
-            //currentMoney -= normalSushi; // -30は保存しなくてもいい
+            currentMoney -= normalSushi; // -30は保存しなくてもいい
             selectedOptionSettingSushiID.ReturnColor();　// 使う
             PlayerPrefs.SetInt("BOUGHT_KEY"+selectedOptionSettingSushiID.sushiID,BOUGHT);
             Money.instance.buySushiCount += 1;

@@ -1098,6 +1098,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2046196968}
     m_Modifications:
+    - target: {fileID: 5927932659830460835, guid: 7b20ecd051a124fdea52d078ab3bedae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1988489689}
+    - target: {fileID: 5927932659830460835, guid: 7b20ecd051a124fdea52d078ab3bedae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927932659830460835, guid: 7b20ecd051a124fdea52d078ab3bedae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOptionManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5927932659830460846, guid: 7b20ecd051a124fdea52d078ab3bedae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1249,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3136,7 +3148,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1334, y: 750}
+  m_SizeDelta: {x: 1334, y: 750.00006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046196969
 MonoBehaviour:

@@ -18,7 +18,6 @@ public class LoginBonus : MonoBehaviour
     private int lastDate;
     private LOGIN_TYPE judge_type;
 
-
     void Start()
     {
         DateTime now = DateTime.Now;//端末の現在時刻の取得        

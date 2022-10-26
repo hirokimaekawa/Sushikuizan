@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class RecordManager : MonoBehaviour
 {
 
-    int totalMoney = 100;
+    int totalMoney = 0;
     public TextMeshProUGUI curerntMoneyText;
 
     int mushikuiTotalPlayCount;

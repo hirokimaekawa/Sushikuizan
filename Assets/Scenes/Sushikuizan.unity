@@ -2244,6 +2244,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &492382479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8145653313488247528, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
+  m_PrefabInstance: {fileID: 769133034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &492382480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492382479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb5275ef75e2439eaaf49b61c86f843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &541140215
 GameObject:
   m_ObjectHideFlags: 0
@@ -7467,9 +7484,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604417652}
-        m_TargetAssemblyTypeName: Sushikuizan, Assembly-CSharp
-        m_MethodName: ToTitleButton
+      - m_Target: {fileID: 492382480}
+        m_TargetAssemblyTypeName: AdMobInterstitial, Assembly-CSharp
+        m_MethodName: ShowAdMobInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

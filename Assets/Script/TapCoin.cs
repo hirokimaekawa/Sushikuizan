@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class TapCoin : MonoBehaviour
 {
-    [SerializeField] Image coinImage;
-    //public Image stamp;
-    //public Sprite sprite;
+    Image coinImage;
 
-    public static TapCoin instance;
-
-    private void Awake()
-    {
-        if (instance = null)
-        {
-            instance = this;
-        }
-
-    }
+    public TapCoinID tapCoinDay;
 
     // Start is called before the first frame update
     void Start()
     {
         coinImage = GetComponent<Image>();
+
+        if ((PlayerPrefs.GetInt("LOGIN_KEY"+tapCoinDay, TitleManager.NO_LOGIN) == TitleManager.LOGIN))
+        {
+            //ログインされているなら、画像を差し替える
+            SwitchImage();
+        }
+        else
+        {
+           //ログインされていないなら、何もしない
+        }
+
     }
 
     // Update is called once per frame
@@ -31,19 +31,27 @@ public class TapCoin : MonoBehaviour
     {
         
     }
-    public void SwitchImage(Sprite sprite)
+
+    public Sprite MaidoSprite;
+    public void SwitchImage()
     {
-        Debug.Log(sprite);
-        coinImage.sprite = sprite;
-        Debug.Log(sprite);
+        coinImage.sprite = MaidoSprite;
     }
 
-    private void FixedUpdate()
+    public void TapDayButton()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+       
+        //ログインボーナスをゲット済なら
+        if ((PlayerPrefs.GetInt("LOGIN_KEY" + tapCoinDay, TitleManager.NO_LOGIN) == TitleManager.LOGIN))
         {
-            //SwitchImage();
+
         }
+        else
+        {
+            TitleManager.instance.ShowDairyLoginPanel(this);
+        }
+        //ログインボーナスをまだゲットしていないなら
+
     }
-    
+
 }

@@ -28,6 +28,22 @@ public class Money : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+  
+    public void FirstSave()
+    {
+        PlayerPrefs.SetInt("CURRENT_MONEY_KEY", getMoney);
+    }
+    public void DairyLoginSave()
+    {
+        PlayerPrefs.SetInt("CURRENT_MONEY_KEY", getMoney);
+    }
+    public void LastLoginSave()
+    {
+        PlayerPrefs.SetInt("CURRENT_MONEY_KEY", getMoney);
+    }
+
+
     //string SEVEKEY = "SAVE-KEY";
     public void Save()
     {

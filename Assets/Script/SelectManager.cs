@@ -7,9 +7,9 @@ using TMPro;
 public class SelectManager : MonoBehaviour
 {
 
-    int totalMoney = 100;
+    int totalMoney = 0;
     public TextMeshProUGUI  currentMoneyText;
-    int curentMoney = 100;
+    int curentMoney = 0;
 
 
     // Start is called before the first frame update
@@ -48,5 +48,10 @@ public class SelectManager : MonoBehaviour
     public void LoadReward()
     {
         SceneManager.LoadScene("Record");
+    }
+
+    public void LoadGameOption()
+    {
+        SceneManager.LoadScene("GameOption");
     }
 }

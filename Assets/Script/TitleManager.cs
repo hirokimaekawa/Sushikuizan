@@ -12,9 +12,10 @@ public class TitleManager : MonoBehaviour
     public GameObject diaryLoginPanel;
     public GameObject lastLoginPanel;
     public GameObject fisrtBonusButton;
+    public GameObject goSelectButton;
 
 
-    private enum LOGIN_TYPE
+    public enum LOGIN_TYPE
     {
         FIRST_USER_LOGIN, //初回ログイン
         TODAY_LOGIN,      //ログイン
@@ -24,10 +25,19 @@ public class TitleManager : MonoBehaviour
 
     private int todayDate = 0;
     private int lastDate;
-    private LOGIN_TYPE judge_type;
+    public LOGIN_TYPE judge_type;
 
     private int dayCount;
 
+    public static TitleManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
@@ -55,6 +65,9 @@ public class TitleManager : MonoBehaviour
             judge_type = LOGIN_TYPE.ERROR_LOGIN;　// エラーだよ
         }
     }
+
+    public const int NO_LOGIN = 0;
+    public const int LOGIN = 1;
 
     private void JudgeBonusType()
     {
@@ -85,7 +98,8 @@ public class TitleManager : MonoBehaviour
 
             //すでにログイン済み
             case LOGIN_TYPE.ALREADY_LOGIN:
-                //なにもしない
+                //次に進むボタンを出す
+                goSelectButton.SetActive(true);
                 break;
 
             //不正ログイン
@@ -99,6 +113,10 @@ public class TitleManager : MonoBehaviour
         PlayerPrefs.SetInt("LastestDay",dayCount);
         PlayerPrefs.Save();
     }
+    //応用して、ログインデータを保存する
+    //ログインした、してない　public const int NO_LOGIN = 0; public const int LOGIN =  1;
+
+    //PlayerPrefs.SetInt("BOUGHT_KEY"+selectedOptionSettingSushiID.sushiID,BOUGHT);
 
     public void StratButton()
     {
@@ -115,29 +133,28 @@ public class TitleManager : MonoBehaviour
     public void FisrtBonusButton()
     {
         Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
+        //Money.instance.FirstSave();
         fisrtLoginPanel.SetActive(false);
     }
 
-    public void ShowDairyLoginPanel()
+    public void ShowDairyLoginPanel(TapCoin tapCoin)
     {
         diaryLoginPanel.SetActive(true);
+        //引数のthisをtapCoinで受け取ってtapCoinIDに入れた
+        tapCoinID = tapCoin;
     }
 
-    //１日目、2日目と書かれたボタン
-    public void TapDayButton()
-    {
-        ShowDairyLoginPanel();
-    }
-
-    public Sprite testSprite;
+    TapCoin tapCoinID;
 
     public void DiaryBonusButton()
     {
         Money.instance.getMoney += 10;
         diaryLoginPanel.SetActive(false);
-        Debug.Log(testSprite);
-        TapCoin.instance.SwitchImage(testSprite);
-        Debug.Log(testSprite);
+        //tapCoinIDを使ってSwitchImageを参照する
+        tapCoinID.SwitchImage();
+        goSelectButton.SetActive(true);
+        PlayerPrefs.SetInt("LOGIN_KEY" + tapCoinID.tapCoinDay, LOGIN);
+        //Money.instance.DairyLoginSave();
     }
 
     public void ShowLastLoginPanel()
@@ -149,5 +166,11 @@ public class TitleManager : MonoBehaviour
     {
         Money.instance.getMoney += 200;
         lastLoginPanel.SetActive(false);
+    }
+
+    public void GoToSelect()
+    {
+        SceneManager.LoadScene("Select");
+        Money.instance.Save();
     }
 }

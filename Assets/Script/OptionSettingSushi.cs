@@ -18,26 +18,36 @@ public class OptionSettingSushi : MonoBehaviour
 
     private void Awake()
     {
-      
-        //sprite = GetComponent<Image>().sprite;
         sushiImage = GetComponent<Image>();
-
-        sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sprite;
-       
+        sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sprite;  
     }
 
     public void Start()
     {
-        //違う方法で、boughtを判定し、該当する寿司を真っ黒にする。
+
+        //例えば、マグロIDの購入保存データを参照する
         if ((PlayerPrefs.GetInt("BOUGHT_KEY" + sushiID, OptionManager.No_BOUGHT) == OptionManager.BOUGHT))
         {
-
+            //左辺のOptionManager.BOUGHT(つまり、１)と右辺のOptionManager.BOUGHT（つまり、１）だと、何もしない
         }
         else
         {
+            //イコールにならないから、黒になる
             sushiImage.color = Color.black;
-
         }
+
+        
+        //if ((PlayerPrefs.GetInt("BOUGHT_KEY" + sushiID, OptionManager.No_BOUGHT) == OptionManager.BOUGHT))
+        //{
+
+        //}
+        //else
+        //{
+        //    sushiImage.color = Color.black;
+        //}
+
+
+
     }
 
     public void OnClick()

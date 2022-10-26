@@ -132,11 +132,11 @@ public class Sushikuizan : MonoBehaviour
         finishPanel.SetActive(false);
     }
 
-    public void ToTitleButton()
-    {
-        SceneManager.LoadScene("Select");
-        Money.instance.Save();
-    }
+    //public void ToTitleButton()
+    //{
+    //    SceneManager.LoadScene("Select");
+    //    Money.instance.Save();
+    //}
 
     public void BackButton()
     {
