@@ -47,6 +47,7 @@ public class Money : MonoBehaviour
     //string SEVEKEY = "SAVE-KEY";
     public void Save()
     {
+        Debug.Log("実行された");
         PlayerPrefs.SetInt("SAVE-KEY", getMoney);
         PlayerPrefs.SetInt("CURRENT_MONEY_KEY",currentMoney);
         PlayerPrefs.SetInt("MushikuiKey", mushikuiPlayCount);

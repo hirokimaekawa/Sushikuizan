@@ -133,15 +133,22 @@ public class TitleManager : MonoBehaviour
     public void FisrtBonusButton()
     {
         Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
+        Money.instance.currentMoney += 100;
         //Money.instance.FirstSave();
         fisrtLoginPanel.SetActive(false);
+        Debug.Log("１回目"+Money.instance.getMoney);
     }
 
     public void ShowDairyLoginPanel(TapCoin tapCoin)
     {
-        diaryLoginPanel.SetActive(true);
-        //引数のthisをtapCoinで受け取ってtapCoinIDに入れた
-        tapCoinID = tapCoin;
+        Debug.Log($"{tapCoin.tapCoinDay}:{dayCount}");
+        if ((int)tapCoin.tapCoinDay == dayCount-1)
+        {
+            diaryLoginPanel.SetActive(true);
+            //引数のthisをtapCoinで受け取ってtapCoinIDに入れた
+            tapCoinID = tapCoin;
+        }
+       
     }
 
     TapCoin tapCoinID;
@@ -149,12 +156,17 @@ public class TitleManager : MonoBehaviour
     public void DiaryBonusButton()
     {
         Money.instance.getMoney += 10;
+        Money.instance.currentMoney += 10;
+
         diaryLoginPanel.SetActive(false);
         //tapCoinIDを使ってSwitchImageを参照する
         tapCoinID.SwitchImage();
         goSelectButton.SetActive(true);
         PlayerPrefs.SetInt("LOGIN_KEY" + tapCoinID.tapCoinDay, LOGIN);
         //Money.instance.DairyLoginSave();
+        Debug.Log("２回目" + Money.instance.getMoney);
+        Debug.Log("２回目" + Money.instance.currentMoney);
+
     }
 
     public void ShowLastLoginPanel()

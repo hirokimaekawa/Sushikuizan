@@ -18,9 +18,9 @@ public class SelectManager : MonoBehaviour
         Debug.Log("所持金" + Money.instance.currentMoney);
         Money.instance.Load();
         totalMoney = totalMoney + Money.instance.getMoney; //これまでの累積マネー
+        curentMoney = curentMoney + Money.instance.getMoney;
 
-        curentMoney = curentMoney + Money.instance.currentMoney;
-        currentMoneyText.text = curentMoney.ToString();
+        currentMoneyText.text = Money.instance.currentMoney.ToString();
         Debug.Log("所持金" + Money.instance.currentMoney);
     }
 

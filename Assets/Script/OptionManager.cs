@@ -55,7 +55,7 @@ public class OptionManager : MonoBehaviour
 
         Money.instance.Load();
          currentMoney = currentMoney + Money.instance.currentMoney;
-        Debug.Log("現在のお金は？"+currentMoney);
+        Debug.Log("現在のお金は？"+ Money.instance.currentMoney);
         //curerntMoneyText.text = currentMoney.ToString();
         curerntMoneyText.text = Money.instance.currentMoney.ToString();
 
