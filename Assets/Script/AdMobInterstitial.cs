@@ -96,6 +96,7 @@ public class AdMobInterstitial : MonoBehaviour
         Debug.Log("インタースティシャル広告再読み込み");
 
         SceneManager.LoadScene("Select");
+        Money.instance.Save();
     }
 
 }
