@@ -821,7 +821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 2
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &241903396
@@ -1240,7 +1239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 1
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &439000064
@@ -1627,7 +1625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 4
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &634844375
@@ -1862,7 +1859,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1334.0001, y: 750.0001}
+  m_SizeDelta: {x: 1334, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809695785
 MonoBehaviour:
@@ -2009,7 +2006,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 3
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &905274497
@@ -2352,7 +2348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 6
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &970480494
@@ -2739,7 +2734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 9
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: 2cafd2c15146a4f53a90a618c85e3587, type: 3}
   defaultSprite: {fileID: 21300000, guid: 48d232b73e88c48c09901128571ce8c4, type: 3}
 --- !u!114 &1177495017
@@ -3522,6 +3516,17 @@ MonoBehaviour:
   lastLoginPanel: {fileID: 22995568}
   fisrtBonusButton: {fileID: 418221293}
   goSelectButton: {fileID: 1480764996}
+  tapCoins:
+  - {fileID: 2105887539}
+  - {fileID: 439000063}
+  - {fileID: 241903395}
+  - {fileID: 905274496}
+  - {fileID: 634844374}
+  - {fileID: 2120110133}
+  - {fileID: 970480493}
+  - {fileID: 1853422797}
+  - {fileID: 1630297236}
+  - {fileID: 1177495016}
   judge_type: 0
 --- !u!4 &1505086306
 Transform:
@@ -3877,7 +3882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 250, y: -120}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1630297234
@@ -3931,7 +3936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 8
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &1630297237
@@ -4195,7 +4199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -120}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853422795
@@ -4249,7 +4253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 7
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &1853422798
@@ -4730,7 +4733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 0
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!1 &2120110129
@@ -4825,7 +4827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 5
-  tapCoins: []
   maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
   defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &2120110134
