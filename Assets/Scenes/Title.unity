@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 22995569}
   - component: {fileID: 22995571}
   - component: {fileID: 22995570}
+  - component: {fileID: 22995572}
   m_Layer: 5
   m_Name: LastLoginPanel
   m_TagString: Untagged
@@ -334,6 +335,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22995568}
   m_CullTransparentMesh: 1
+--- !u!114 &22995572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22995568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 22995570}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1505086305}
+        m_TargetAssemblyTypeName: TitleManager, Assembly-CSharp
+        m_MethodName: LastBonusButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &62067862
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +821,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 2
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &241903396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,7 +1240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 1
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &439000064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,7 +1627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 4
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &634844375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,7 +2009,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 3
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &905274497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2287,7 +2352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 6
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &970480494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,7 +2739,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 9
-  MaidoSprite: {fileID: 21300000, guid: 2cafd2c15146a4f53a90a618c85e3587, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: 2cafd2c15146a4f53a90a618c85e3587, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 48d232b73e88c48c09901128571ce8c4, type: 3}
 --- !u!114 &1177495017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3862,7 +3931,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 8
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &1630297237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,7 +4249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 7
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &1853422798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4657,7 +4730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 0
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!1 &2120110129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,7 +4825,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapCoinDay: 5
-  MaidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  tapCoins: []
+  maidoSprite: {fileID: 21300000, guid: bb9f6245cd7bb4c47b73b37703f63adb, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 866ca5cbe5be44513819fefae4460e6c, type: 3}
 --- !u!114 &2120110134
 MonoBehaviour:
   m_ObjectHideFlags: 0

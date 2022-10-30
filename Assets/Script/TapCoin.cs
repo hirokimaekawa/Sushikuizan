@@ -32,10 +32,19 @@ public class TapCoin : MonoBehaviour
         
     }
 
-    public Sprite MaidoSprite;
+    public Sprite maidoSprite;
+    public Sprite defaultSprite;
+
     public void SwitchImage()
     {
-        coinImage.sprite = MaidoSprite;
+        coinImage.sprite = maidoSprite;
+    }
+
+    //元に戻す関数
+    public void ResetImage()
+    {
+        coinImage.sprite = defaultSprite;
+        Debug.Log("ResetImageが実行された");
     }
 
     public void TapDayButton()

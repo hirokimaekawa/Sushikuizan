@@ -13,7 +13,7 @@ public class TitleManager : MonoBehaviour
     public GameObject lastLoginPanel;
     public GameObject fisrtBonusButton;
     public GameObject goSelectButton;
-
+    [SerializeField] TapCoin[] tapCoins;
 
     public enum LOGIN_TYPE
     {
@@ -43,7 +43,7 @@ public class TitleManager : MonoBehaviour
     {
         DateTime now = DateTime.Now;//端末の現在時刻の取得        
         todayDate = now.Year * 10000 + now.Month * 100 + now.Day;//日付を数値化　2020年9月1日だと20200901になる
-
+        todayDate += 9;
         //前回ログイン時の日付データをロード データがない場合はFIRST_USER_LOGINで0
         lastDate = PlayerPrefs.GetInt("LastGetDate", (int)LOGIN_TYPE.FIRST_USER_LOGIN);
         dayCount = PlayerPrefs.GetInt("LastestDay",dayCount);
@@ -128,20 +128,20 @@ public class TitleManager : MonoBehaviour
     void ShowFirstLoginPanel()
     {
         fisrtLoginPanel.SetActive(true);
+        Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
+        Money.instance.currentMoney += 100;
+        Money.instance.Save();
     }
 
     public void FisrtBonusButton()
     {
-        Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
-        Money.instance.currentMoney += 100;
-        //Money.instance.FirstSave();
         fisrtLoginPanel.SetActive(false);
-        Debug.Log("１回目"+Money.instance.getMoney);
     }
 
     public void ShowDairyLoginPanel(TapCoin tapCoin)
     {
         Debug.Log($"{tapCoin.tapCoinDay}:{dayCount}");
+        Debug.Log(tapCoin.tapCoinDay+":"+ dayCount);
         if ((int)tapCoin.tapCoinDay == dayCount-1)
         {
             diaryLoginPanel.SetActive(true);
@@ -161,28 +161,44 @@ public class TitleManager : MonoBehaviour
         diaryLoginPanel.SetActive(false);
         //tapCoinIDを使ってSwitchImageを参照する
         tapCoinID.SwitchImage();
+        Money.instance.Save();
         goSelectButton.SetActive(true);
         PlayerPrefs.SetInt("LOGIN_KEY" + tapCoinID.tapCoinDay, LOGIN);
-        //Money.instance.DairyLoginSave();
-        Debug.Log("２回目" + Money.instance.getMoney);
-        Debug.Log("２回目" + Money.instance.currentMoney);
-
     }
 
     public void ShowLastLoginPanel()
     {
         lastLoginPanel.SetActive(true);
+        Money.instance.getMoney += 200;
+        Money.instance.currentMoney += 200;
+        Money.instance.Save();
+
     }
 
     public void LastBonusButton()
     {
-        Money.instance.getMoney += 200;
         lastLoginPanel.SetActive(false);
     }
 
     public void GoToSelect()
     {
         SceneManager.LoadScene("Select");
-        Money.instance.Save();
+
+        if (dayCount == 10)
+        {
+            Test();
+            Debug.Log("ifが実行された");
+        }
+
+    }
+    //10日目のログインで実行したい関数
+    void Test()
+    {
+        foreach (var tap in tapCoins)
+        {
+            tap.ResetImage();
+            Debug.Log("foreachが実行された");
+
+        }
     }
 }
