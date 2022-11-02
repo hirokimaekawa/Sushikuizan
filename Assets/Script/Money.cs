@@ -13,6 +13,8 @@ public class Money : MonoBehaviour
 
     public int buySushiCount;
 
+    public int totalDayCount;
+
     //これを作らないと、Load（）を実行しても、インスタンスがないよって警告が出る
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class Money : MonoBehaviour
         PlayerPrefs.SetInt("MushikuiKey", mushikuiPlayCount);
         PlayerPrefs.SetInt("SushikuiKey", sushikuiPlayCount);
         PlayerPrefs.SetInt("SUSHI_COUNT_KEY", buySushiCount);
+        PlayerPrefs.SetInt("TOTAL_DAY_COUNT", totalDayCount);
         PlayerPrefs.Save();
     }
 
@@ -63,6 +66,7 @@ public class Money : MonoBehaviour
         mushikuiPlayCount = PlayerPrefs.GetInt("MushikuiKey", mushikuiPlayCount);
         sushikuiPlayCount = PlayerPrefs.GetInt("SushikuiKey", sushikuiPlayCount);
         buySushiCount = PlayerPrefs.GetInt("SUSHI_COUNT_KEY", buySushiCount);
+        totalDayCount = PlayerPrefs.GetInt("TOTAL_DAY_COUNT", totalDayCount);
         //Debug.Log("kaunnto"+ sushikuiPlayCount);
     }
 }

@@ -43,7 +43,8 @@ public class TapCoin : MonoBehaviour
     //元に戻す関数
     public void ResetImage()
     {
-        coinImage.sprite = defaultSprite;
+        Debug.Log("ResetImageが実行された"); //実行された　ResetImageは呼び出しに成功
+        coinImage.sprite = defaultSprite; //実行されてない　
         Debug.Log("ResetImageが実行された");
     }
 

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class RecordManager : MonoBehaviour
 {
+    int totalLoginDays = 0;
+    public TextMeshProUGUI totalLoginDaysText;
 
     int totalMoney = 0;
     public TextMeshProUGUI curerntMoneyText;
@@ -28,6 +30,10 @@ public class RecordManager : MonoBehaviour
     void Start()
     {
         Money.instance.Load();
+        totalLoginDays = totalLoginDays + Money.instance.totalDayCount;
+        totalLoginDaysText.text = totalLoginDays.ToString();
+
+
         totalMoney = totalMoney + Money.instance.getMoney;
         curerntMoneyText.text = totalMoney.ToString(); //ゆくゆく残数のゼニーと通算獲得のゼニーを分けて考える必要がある
 

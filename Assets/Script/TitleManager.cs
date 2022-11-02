@@ -43,7 +43,7 @@ public class TitleManager : MonoBehaviour
     {
         DateTime now = DateTime.Now;//端末の現在時刻の取得        
         todayDate = now.Year * 10000 + now.Month * 100 + now.Day;//日付を数値化　2020年9月1日だと20200901になる
-        todayDate += 9;
+        todayDate += 10;
         //前回ログイン時の日付データをロード データがない場合はFIRST_USER_LOGINで0
         lastDate = PlayerPrefs.GetInt("LastGetDate", (int)LOGIN_TYPE.FIRST_USER_LOGIN);
         dayCount = PlayerPrefs.GetInt("LastestDay",dayCount);
@@ -55,6 +55,10 @@ public class TitleManager : MonoBehaviour
         {
             judge_type = LOGIN_TYPE.TODAY_LOGIN; // 今日初めてログインするよ
             dayCount++;
+            Money.instance.totalDayCount++;
+            Debug.Log(Money.instance.totalDayCount);
+            Money.instance.Save();
+
         }
         else if (lastDate == todayDate)//日付が進んでいない場合
         {
@@ -63,6 +67,14 @@ public class TitleManager : MonoBehaviour
         else if (lastDate > todayDate)//日付が逆転している場合
         {
             judge_type = LOGIN_TYPE.ERROR_LOGIN;　// エラーだよ
+        }
+
+        Debug.Log(dayCount);
+        if (dayCount == 11)
+        {
+            Debug.Log(dayCount + "だとわかっている");
+            dayCount = 1;
+            Test();
         }
     }
 
@@ -161,9 +173,20 @@ public class TitleManager : MonoBehaviour
         diaryLoginPanel.SetActive(false);
         //tapCoinIDを使ってSwitchImageを参照する
         tapCoinID.SwitchImage();
+
+        ////daycountが10、10日目のログインなら、
+        //if (dayCount == 10)
+        //{
+        //    Debug.Log(dayCount + "だとわかっている");
+        //    dayCount = 0;
+        //    Test();
+        //}
+
         Money.instance.Save();
         goSelectButton.SetActive(true);
         PlayerPrefs.SetInt("LOGIN_KEY" + tapCoinID.tapCoinDay, LOGIN);
+
+
     }
 
     public void ShowLastLoginPanel()
@@ -184,15 +207,21 @@ public class TitleManager : MonoBehaviour
     {
         SceneManager.LoadScene("Select");
 
-        if (dayCount == 10)
-        {
-            Test();
-            Debug.Log("ifが実行された");
-        }
+        //if (dayCount == 10)
+        //{
+        //    Test();
+        //    Debug.Log("ifが実行された");
+        //}
 
     }
     //10日目のログインで実行したい関数
     void Test()
+    {
+        DeleteLoginKey();
+        ResetLogin();
+    }
+
+    public void ResetLogin()
     {
         foreach (var tap in tapCoins)
         {
@@ -200,5 +229,13 @@ public class TitleManager : MonoBehaviour
             Debug.Log("foreachが実行された");
 
         }
+    }
+    public void DeleteLoginKey()
+    {
+        Debug.Log("Deleteされた");
+        PlayerPrefs.DeleteKey("LOGIN_KEY"); //セーブデータのリセットはこちら
+        PlayerPrefs.DeleteKey("LastestDay"); //daycountで保存したKeyは消したはず
+        Debug.Log("Deleteされた");
+
     }
 }
