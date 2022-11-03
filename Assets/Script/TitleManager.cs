@@ -37,16 +37,13 @@ public class TitleManager : MonoBehaviour
         {
             instance = this;
         }
-    }
 
-    void Start()
-    {
         DateTime now = DateTime.Now;//端末の現在時刻の取得        
         todayDate = now.Year * 10000 + now.Month * 100 + now.Day;//日付を数値化　2020年9月1日だと20200901になる
         todayDate += 10;
         //前回ログイン時の日付データをロード データがない場合はFIRST_USER_LOGINで0
         lastDate = PlayerPrefs.GetInt("LastGetDate", (int)LOGIN_TYPE.FIRST_USER_LOGIN);
-        dayCount = PlayerPrefs.GetInt("LastestDay",dayCount);
+        dayCount = PlayerPrefs.GetInt("LastestDay", dayCount);
 
 
         //前回と今回の日付データ比較
@@ -70,12 +67,17 @@ public class TitleManager : MonoBehaviour
         }
 
         Debug.Log(dayCount);
-        if (dayCount == 11)
+        if (dayCount == 11) //Awake関数に持ってきたのは、TapCoin.csのStart関数よりも早く実行させておいて、Keyをデリートしたいから
         {
             Debug.Log(dayCount + "だとわかっている");
             dayCount = 1;
             Test();
         }
+    }
+
+    void Start()
+    {
+        
     }
 
     public const int NO_LOGIN = 0;
