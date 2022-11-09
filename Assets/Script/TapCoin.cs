@@ -26,6 +26,11 @@ public class TapCoin : MonoBehaviour
 
     }
 
+    public void TestDeleteKey()
+    {
+        PlayerPrefs.DeleteKey("LOGIN_KEY" +tapCoinDay); //セーブデータのリセットはこちら
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -126,6 +126,7 @@ public class OptionManager : MonoBehaviour
 
     public void BackButton()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
         Money.instance.Save();
     }
@@ -138,6 +139,7 @@ public class OptionManager : MonoBehaviour
 
     public void OnRightArrow()
     {
+        TransitionButton();
         panelNumber++;
         if (panelNumber > Panel_2)
         {
@@ -147,6 +149,7 @@ public class OptionManager : MonoBehaviour
     }
      public void OnLeftArrow()
     {
+        TransitionButton();
         panelNumber--;
         if (panelNumber < Panel_0)
         {
@@ -170,6 +173,10 @@ public class OptionManager : MonoBehaviour
                 panelParent.transform.localPosition = new Vector2(-4000, 0);
                 break;
         }
+    }
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
     }
 }
  

@@ -235,9 +235,12 @@ public class TitleManager : MonoBehaviour
     public void DeleteLoginKey()
     {
         Debug.Log("Deleteされた");
-        PlayerPrefs.DeleteKey("LOGIN_KEY"); //セーブデータのリセットはこちら
+        //PlayerPrefs.DeleteKey("LOGIN_KEY"); //セーブデータのリセットはこちら
+        tapCoinID.TestDeleteKey(); //Coinそれぞれにアタッチされたスクリプトで、それぞれTestDeleteKey（）を実行して、データを削除してみた
         PlayerPrefs.DeleteKey("LastestDay"); //daycountで保存したKeyは消したはず
         Debug.Log("Deleteされた");
 
     }
+
+   
 }

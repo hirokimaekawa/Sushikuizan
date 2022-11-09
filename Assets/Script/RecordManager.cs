@@ -53,7 +53,12 @@ public class RecordManager : MonoBehaviour
     }
     public void BackButton()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
+    }
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
     }
 }
 

@@ -40,7 +40,8 @@ public class DragSushiTana : MonoBehaviour,IDropHandler
     {
         count++;
         SetSushiImages(count);
-        audioSource.PlayOneShot(popSushiSE);
+        //audioSource.PlayOneShot(popSushiSE);
+        SoundManager.instance.PopSushiSE();
     }
 
     public void RemoveSushi()

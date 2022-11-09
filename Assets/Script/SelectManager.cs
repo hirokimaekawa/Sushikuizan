@@ -32,26 +32,36 @@ public class SelectManager : MonoBehaviour
 
     public void LoadMushikuizan()
     {
+        TransitionButton();
         SceneManager.LoadScene("Mushikuizan");
     }
 
     public void LoadSushikuizan()
     {
+        TransitionButton();
         SceneManager.LoadScene("Sushikuizan");
     }
 
     public void LoadOption()
     {
+        TransitionButton();
         SceneManager.LoadScene("SushiOption");
     }
 
     public void LoadReward()
     {
+        TransitionButton();
         SceneManager.LoadScene("Record");
     }
 
     public void LoadGameOption()
     {
+        TransitionButton();
         SceneManager.LoadScene("GameOption");
+    }
+
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
     }
 }

@@ -24,20 +24,11 @@ public class Mushikuizan : MonoBehaviour
     public GameObject inCorrectAnwser;
     public GameObject finishPanel;
     public GameObject backPanel;
-    
-
-    AudioSource audioSource;
-    public AudioClip correctSE;
-    public AudioClip incorrectSE;
-    public AudioClip successSE;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         CreateQuestion();
-         //ExtractTextInt();
     }
 
     // Update is called once per frame
@@ -55,7 +46,7 @@ public class Mushikuizan : MonoBehaviour
             Money.instance.getMoney += 10;
             Money.instance.currentMoney += 10;
             Money.instance.mushikuiPlayCount += 1;
-            audioSource.PlayOneShot(successSE);  //Updateに入っているから、ずっと鳴りっぱなし。
+            SoundManager.instance.SuccessSE();
             isCalledOnce = true;
         }
     }
@@ -116,12 +107,12 @@ public class Mushikuizan : MonoBehaviour
 
     void ShowCorrectSE()
     {
-        audioSource.PlayOneShot(correctSE);
+        SoundManager.instance.CorrectSE();
     }
 
     IEnumerator ShowInCorrect()
     {
-        audioSource.PlayOneShot(incorrectSE);
+        SoundManager.instance.InCorrectSE();
         inCorrectAnwser.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         inCorrectAnwser.SetActive(false);
@@ -261,30 +252,36 @@ public class Mushikuizan : MonoBehaviour
     }
     public void RetryButton()
     {
+        TransitionButton();
         Reset();
         finishPanel.SetActive(false);
     }
 
     public void ToTitleButton()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
         Money.instance.Save();
     }
 
     public void BackButton()
     {
+        TransitionButton();
         backPanel.SetActive(true);
     }
     public void YesButton()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
     }
     public void NoButton()
     {
+        TransitionButton();
         backPanel.SetActive(false);
     }
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
+    }
 
-    
-
-    
 }

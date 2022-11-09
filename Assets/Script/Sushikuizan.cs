@@ -22,21 +22,15 @@ public class Sushikuizan : MonoBehaviour
 
     public Image[] dragSushiImages;
 
-    AudioSource audioSource;
-    public AudioClip correctSE;
-    public AudioClip incorrectSE;
-    public AudioClip retrySE;
-    public AudioClip successSE;
-
+    public GameObject correctAnwser;
+    public GameObject inCorrectAnwser;
     public GameObject finishPanel;
     public GameObject backPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         CreateQuestion();
-       
     }
 
     // Update is called once per frame
@@ -56,7 +50,7 @@ public class Sushikuizan : MonoBehaviour
             Money.instance.getMoney += 10;
             Money.instance.currentMoney += 10;
             Money.instance.sushikuiPlayCount += 1;
-            audioSource.PlayOneShot(successSE);  //Updateに入っているから、ずっと鳴りっぱなし。
+            SoundManager.instance.SuccessSE();
             isCalledOnce = true;
         }
     }
@@ -87,19 +81,34 @@ public class Sushikuizan : MonoBehaviour
     {
         if (dragSushiTana.count == rightNumber)
         {
-            Debug.Log("正解！！");
-            CreateQuestion();
-            ResetDragSushi();
-            audioSource.PlayOneShot(correctSE);
-            questionCount++;
+            StartCoroutine(CorrectAction());
         }
         else
         {
-            Debug.Log("不正解");
-            ResetDragSushi();
-            rightSushiTana.SetSushiImages(0);
-            audioSource.PlayOneShot(incorrectSE);
+            StartCoroutine(InCorrectAction());
         }
+    }
+
+    IEnumerator CorrectAction()
+    {
+        SoundManager.instance.CorrectSE();
+        correctAnwser.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        correctAnwser.SetActive(false);
+        CreateQuestion();
+        ResetDragSushi();
+        questionCount++;
+    }
+
+    IEnumerator InCorrectAction()
+    {
+        inCorrectAnwser.SetActive(true);
+        SoundManager.instance.InCorrectSE();
+        yield return new WaitForSeconds(1.0f);
+        inCorrectAnwser.SetActive(false);
+        ResetDragSushi();
+        rightSushiTana.SetSushiImages(0);
+
     }
 
     public void ResetDragSushi()
@@ -116,7 +125,8 @@ public class Sushikuizan : MonoBehaviour
     {
         ResetDragSushi();
         rightSushiTana.SetSushiImages(0);
-        audioSource.PlayOneShot(retrySE);
+        SoundManager.instance.RetrySE();
+
     }
 
     void Reset()
@@ -128,26 +138,28 @@ public class Sushikuizan : MonoBehaviour
 
     public void RetryButton()
     {
+        TransitionButton();
         Reset();
         finishPanel.SetActive(false);
     }
 
-    //public void ToTitleButton()
-    //{
-    //    SceneManager.LoadScene("Select");
-    //    Money.instance.Save();
-    //}
-
     public void BackButton()
     {
+        TransitionButton();
         backPanel.SetActive(true);
     }
     public void YesButton()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
     }
     public void NoButton()
     {
+        TransitionButton();
         backPanel.SetActive(false);
+    }
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
     }
 }

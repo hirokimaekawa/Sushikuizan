@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 125886349}
   - component: {fileID: 125886348}
   m_Layer: 5
-  m_Name: Button
+  m_Name: OnBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 125886349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988489689}
+        m_TargetAssemblyTypeName: GameOptionManager, Assembly-CSharp
+        m_MethodName: OnBGMButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125886349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,7 +994,7 @@ GameObject:
   - component: {fileID: 591764954}
   - component: {fileID: 591764953}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: OnSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1014,7 @@ RectTransform:
   m_Children:
   - {fileID: 1292106361}
   m_Father: {fileID: 1107561805}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1052,7 +1064,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 591764954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988489689}
+        m_TargetAssemblyTypeName: GameOptionManager, Assembly-CSharp
+        m_MethodName: OnSEButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &591764954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,8 +1713,8 @@ RectTransform:
   - {fileID: 125886347}
   - {fileID: 1557626012}
   - {fileID: 97972147}
-  - {fileID: 1345878093}
   - {fileID: 591764952}
+  - {fileID: 1345878093}
   - {fileID: 2090662608}
   m_Father: {fileID: 2046196968}
   m_RootOrder: 7
@@ -2135,7 +2159,7 @@ GameObject:
   - component: {fileID: 1345878095}
   - component: {fileID: 1345878094}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: OffSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,7 +2179,7 @@ RectTransform:
   m_Children:
   - {fileID: 45781594}
   m_Father: {fileID: 1107561805}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2205,7 +2229,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1345878095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988489689}
+        m_TargetAssemblyTypeName: GameOptionManager, Assembly-CSharp
+        m_MethodName: OffSEButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1345878095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,7 +2715,7 @@ GameObject:
   - component: {fileID: 1557626014}
   - component: {fileID: 1557626013}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: OffBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2749,7 +2785,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1557626014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988489689}
+        m_TargetAssemblyTypeName: GameOptionManager, Assembly-CSharp
+        m_MethodName: OffBGMButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1557626014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3196,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1334, y: 750.00006}
+  m_SizeDelta: {x: 1334, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046196969
 MonoBehaviour:
@@ -3393,3 +3441,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110295072}
   m_CullTransparentMesh: 1
+--- !u!1001 &2866205642095090198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2866205640858831401, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 942.67303
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 291.7273
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3235258
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866205640858831444, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7971c7f34b51a4e0fb6a1efce64be567, type: 3}
