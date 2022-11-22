@@ -27,10 +27,17 @@ public class Sushikuizan : MonoBehaviour
     public GameObject finishPanel;
     public GameObject backPanel;
 
+    public TextMeshProUGUI countText;
+    public AdMobInterstitial adMobInterstitial;
+    int interstialCount = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
         CreateQuestion();
+        countText.text = questionCount+1 + "/10問目";
+
     }
 
     // Update is called once per frame
@@ -39,6 +46,7 @@ public class Sushikuizan : MonoBehaviour
         Finish();
     }
 
+    //このquestionCountは、問題数も兼ねている。
     int questionCount;
     bool isCalledOnce = false;
 
@@ -52,11 +60,14 @@ public class Sushikuizan : MonoBehaviour
             Money.instance.sushikuiPlayCount += 1;
             SoundManager.instance.SuccessSE();
             isCalledOnce = true;
+            interstialCount++;
         }
     }
 
         void CreateQuestion()
-    { 
+    {
+        if (questionCount < 10)
+        {
         //SystemとUnityEngineの両方があると、Random.Rangeは衝突して使えなくなる
         sumNumber = UnityEngine.Random.Range(1, 11); // 答えは、１〜１０までの数字をランダムで抽出する
         //Debug.Log(sumNumber);
@@ -70,6 +81,10 @@ public class Sushikuizan : MonoBehaviour
         Debug.Log(rightNumber);
         rightNumberText.text = rightNumber.ToString();
         rightSushiTana.SetSushiImages(0);
+
+        countText.text = questionCount + 1 + "/10問目";
+        }
+
     }
 
     void SetLeftSushi(int sushi)
@@ -91,13 +106,14 @@ public class Sushikuizan : MonoBehaviour
 
     IEnumerator CorrectAction()
     {
+        questionCount++;
+
         SoundManager.instance.CorrectSE();
         correctAnwser.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         correctAnwser.SetActive(false);
         CreateQuestion();
         ResetDragSushi();
-        questionCount++;
     }
 
     IEnumerator InCorrectAction()
@@ -132,6 +148,7 @@ public class Sushikuizan : MonoBehaviour
     void Reset()
     {
         questionCount = 0;
+        countText.text = questionCount + 1 + "/10問目";
         isCalledOnce = false; //一回だけ呼び出すために bool配置
         CreateQuestion();
     }
@@ -151,7 +168,14 @@ public class Sushikuizan : MonoBehaviour
     public void YesButton()
     {
         TransitionButton();
-        SceneManager.LoadScene("Select");
+        if (interstialCount >= 1)
+        {
+            adMobInterstitial.ShowAdMobInterstitial();
+        }
+        else
+        {
+            SceneManager.LoadScene("Select");
+        }
     }
     public void NoButton()
     {

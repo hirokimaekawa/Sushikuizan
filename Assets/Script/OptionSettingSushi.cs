@@ -50,6 +50,8 @@ public class OptionSettingSushi : MonoBehaviour
 
     }
 
+
+    //クリックしたタイミングで、SushiDataのSushiRankを渡す仕組みを作る必要があるかも、そのためにOptionManagerで引数ありの関数を作る必要がある。
     public void OnClick()
     {
         if ((PlayerPrefs.GetInt("BOUGHT_KEY" + sushiID, OptionManager.No_BOUGHT)==OptionManager.BOUGHT))
@@ -68,4 +70,6 @@ public class OptionSettingSushi : MonoBehaviour
     {
         sushiImage.color = new Color(255, 255, 255);
     }
+
+    
 }

@@ -25,10 +25,16 @@ public class Mushikuizan : MonoBehaviour
     public GameObject finishPanel;
     public GameObject backPanel;
 
+    public TextMeshProUGUI countText;
+
+    public AdMobInterstitial adMobInterstitial;
+    int interstialCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         CreateQuestion();
+        countText.text = questionCount + 1 + "/10問目";
     }
 
     // Update is called once per frame
@@ -40,6 +46,7 @@ public class Mushikuizan : MonoBehaviour
     bool isCalledOnce = false;
     void Finish()
     {
+
         if (questionCount == 10 && isCalledOnce ==false)
         {
             finishPanel.SetActive(true);
@@ -48,21 +55,28 @@ public class Mushikuizan : MonoBehaviour
             Money.instance.mushikuiPlayCount += 1;
             SoundManager.instance.SuccessSE();
             isCalledOnce = true;
+            interstialCount++;
+            Debug.Log(interstialCount);
         }
     }
 
     void CreateQuestion()
     {
-        Init();
-        //SystemとUnityEngineの両方があると、Random.Rangeは衝突して使えなくなる
-        sumNumber = UnityEngine.Random.Range(1,11); // 答えは、１〜１０までの数字をランダムで抽出する
-        //Debug.Log(sumNumber);
-        sumNumberText.text = sumNumber.ToString();
-        leftNumber = UnityEngine.Random.Range(0, sumNumber+1); //左の数字は、０〜sumNumner+1まで⇨右辺だけでなく、左辺も10になったら、テキストが黒板からはみ出すからsumNumberにした 10月1日、はみ出てもいい。イラストで横長の黒板にする
-        //Debug.Log(leftNumber);
-        leftNumberText.text = leftNumber.ToString();
-        rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
-        Debug.Log(rightNumber);
+        if (questionCount < 10)
+        {
+            Init();
+            //SystemとUnityEngineの両方があると、Random.Rangeは衝突して使えなくなる
+            sumNumber = UnityEngine.Random.Range(1, 11); // 答えは、１〜１０までの数字をランダムで抽出する
+                                                         //Debug.Log(sumNumber);
+            sumNumberText.text = sumNumber.ToString();
+            leftNumber = UnityEngine.Random.Range(0, sumNumber + 1); //左の数字は、０〜sumNumner+1まで⇨右辺だけでなく、左辺も10になったら、テキストが黒板からはみ出すからsumNumberにした 10月1日、はみ出てもいい。イラストで横長の黒板にする
+                                                                     //Debug.Log(leftNumber);
+            leftNumberText.text = leftNumber.ToString();
+            rightNumber = sumNumber - leftNumber; //右の数字は、sumNumberからleftNumberを引いて求める
+            Debug.Log(rightNumber);
+            countText.text = questionCount + 1 + "/10問目";
+
+        }
     }
     
 
@@ -101,6 +115,8 @@ public class Mushikuizan : MonoBehaviour
     void Reset()
     {
         questionCount = 0;
+        countText.text = questionCount + 1 + "/10問目";
+
         isCalledOnce = false; //一回だけ呼び出すために bool配置
         CreateQuestion();
     }
@@ -272,7 +288,16 @@ public class Mushikuizan : MonoBehaviour
     public void YesButton()
     {
         TransitionButton();
-        SceneManager.LoadScene("Select");
+        Debug.Log(interstialCount);
+
+        if (interstialCount >= 1)
+        {
+            adMobInterstitial.ShowAdMobInterstitial();
+        }
+        else
+        {
+            SceneManager.LoadScene("Select");
+        }
     }
     public void NoButton()
     {

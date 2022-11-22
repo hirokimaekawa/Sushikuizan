@@ -14,9 +14,24 @@ public class OptionManager : MonoBehaviour
     Image getSushiImage;
     public Image selectSushiImage;
     public TextMeshProUGUI sushiSelectText;
+
+    //選択後の寿司パネル
+    public GameObject selectedSushiPanel;
+    public TextMeshProUGUI sushiSelectedText;
+    public Image setSushiImage_2;
+
+
     public GameObject sushiBuyPanel;
     public Image buySushiImage;
     public TextMeshProUGUI sushiBuyText;
+    public TextMeshProUGUI howMuchText;
+
+    //購入後の寿司パネル
+    public GameObject sushiBoughtPanel;
+    public TextMeshProUGUI sushiBoughtText;
+    public Image buySushiImage_2;
+
+
 
     public const int No_BOUGHT = 0;
     public const int BOUGHT = 1;
@@ -74,53 +89,152 @@ public class OptionManager : MonoBehaviour
         sushiPanel.SetActive(true);
     }
 
+    SushiID keepID;
+
     public void ShowBuySushiPanel(SushiID sushiID,OptionSettingSushi optionSettingSushiID)
     {
         selectedOptionSettingSushiID = optionSettingSushiID; //取得
         selectedID = sushiID;
         SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(sushiID);
         sushiBuyText.text = sushiData.name + "を買いますか？";
+        if (sushiData.sushiRank == SushiRank.Rank_1)
+        {
+            howMuchText.text = sushiRank_1 + "ゼニーをつかいます";
+        }
+        if (sushiData.sushiRank == SushiRank.Rank_2)
+        {
+            howMuchText.text = sushiRank_2 + "ゼニーをつかいます";
+        }
+        if (sushiData.sushiRank == SushiRank.Rank_3)
+        {
+            howMuchText.text = sushiRank_3 + "ゼニーをつかいます";
+        }
         buySushiImage.sprite = sushiData.sprite;
         sushiBuyPanel.SetActive(true);
+        keepID = sushiID;
     }
+    //寿司ランク1の消耗ゼニー
+    public const int sushiRank_1 = 20;
+    //寿司ランク2の消耗ゼニー
+    public const int sushiRank_2 = 40;
+    //寿司ランク3の消耗ゼニー
+    public const int sushiRank_3 = 60;
+    //寿司ランク4の消耗ゼニー
+    public const int sushiRank_4 = 80;
+    //寿司ランク5の消耗ゼニー
+    public const int sushiRank_5 = 100;
 
-    public const int normalSushi = 30;
-    //public bool isBought = false;
     public void BuyButton()
     {
         sushiBuyPanel.SetActive(false);
+        ShowBoughtSushiPanel();
         if (Money.instance.currentMoney > 20)
         {
-            Debug.Log("現在のお金"+currentMoney);
-            currentMoney -= normalSushi; // -30は保存しなくてもいい
-            selectedOptionSettingSushiID.ReturnColor();　// 使う
-            PlayerPrefs.SetInt("BOUGHT_KEY"+selectedOptionSettingSushiID.sushiID,BOUGHT);
-            Money.instance.buySushiCount += 1;
-            //currentMoney = currentMoney + Money.instance.currentMoney;
-            Money.instance.currentMoney -= normalSushi;
-            curerntMoneyText.text = currentMoney.ToString();
-           
-            Debug.Log("減った金額"+ normalSushi);
-            Money.instance.Save();
-            Debug.Log("保存した金額"+Money.instance.currentMoney);
+            //寿司データを取得して、keepIDを入れてから
+            SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(keepID);
+            //寿司ランク1なら
+            if (sushiData.sushiRank == SushiRank.Rank_1)
+            {
+                Debug.Log("現在のお金" + currentMoney);
+                currentMoney -= sushiRank_1; // -30は保存しなくてもいい
+                selectedOptionSettingSushiID.ReturnColor(); // 使う
+                BuySushiButton();
+                PlayerPrefs.SetInt("BOUGHT_KEY" + selectedOptionSettingSushiID.sushiID, BOUGHT);
+                Money.instance.buySushiCount += 1;
+                //currentMoney = currentMoney + Money.instance.currentMoney;
+                Money.instance.currentMoney -= sushiRank_1;
+                curerntMoneyText.text = currentMoney.ToString();
+
+                Debug.Log("減った金額" + sushiRank_1);
+                Money.instance.Save();
+                Debug.Log("保存した金額" + Money.instance.currentMoney);
+            }
+            //寿司ランク2なら
+            if (sushiData.sushiRank == SushiRank.Rank_2)
+            {
+                Debug.Log("現在のお金" + currentMoney);
+                currentMoney -= sushiRank_2; // -30は保存しなくてもいい
+                selectedOptionSettingSushiID.ReturnColor(); // 使う
+                BuySushiButton();
+                PlayerPrefs.SetInt("BOUGHT_KEY" + selectedOptionSettingSushiID.sushiID, BOUGHT);
+                Money.instance.buySushiCount += 1;
+                //currentMoney = currentMoney + Money.instance.currentMoney;
+                Money.instance.currentMoney -= sushiRank_2;
+                curerntMoneyText.text = currentMoney.ToString();
+
+                Debug.Log("減った金額" + sushiRank_2);
+                Money.instance.Save();
+                Debug.Log("保存した金額" + Money.instance.currentMoney);
+            }
+            //寿司ランク3なら
+            if (sushiData.sushiRank == SushiRank.Rank_3)
+            {
+                Debug.Log("現在のお金" + currentMoney);
+                currentMoney -= sushiRank_3; // -30は保存しなくてもいい
+                selectedOptionSettingSushiID.ReturnColor(); // 使う
+                BuySushiButton();
+                PlayerPrefs.SetInt("BOUGHT_KEY" + selectedOptionSettingSushiID.sushiID, BOUGHT);
+                Money.instance.buySushiCount += 1;
+                //currentMoney = currentMoney + Money.instance.currentMoney;
+                Money.instance.currentMoney -= sushiRank_3;
+                curerntMoneyText.text = currentMoney.ToString();
+
+                Debug.Log("減った金額" + sushiRank_3);
+                Money.instance.Save();
+                Debug.Log("保存した金額" + Money.instance.currentMoney);
+            }
+
         }
+    }
+
+    void ShowBoughtSushiPanel()
+    {
+        SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(keepID);
+        sushiBoughtText.text = sushiData.name + "をえらべるようになった";
+        buySushiImage_2.sprite = sushiData.sprite;
+        sushiBoughtPanel.SetActive(true);
+    }
+
+    public void CloseShowBoughtSushiPanel()
+    {
+        sushiBoughtPanel.SetActive(false);
+        SoundManager.instance.TransitionSE();
     }
 
     public void NotBuyButton()
     {
+        TransitionButton();
         sushiBuyPanel.SetActive(false);
     }
 
     public void DecideButton()
     {
         sushiPanel.SetActive(false);
+        keepID = selectedID;
+        ShowSelectedSushiPanel();
         setSushiImage.sprite = selectSushiImage.sprite;
+        DecideSushiButton();
         PlayerPrefs.SetInt("SUSHI_IMAGE_ID",(int)selectedID); //int,string,float 画像は保存できない
         PlayerPrefs.Save();
     }
 
+    void ShowSelectedSushiPanel()
+    {
+        SushiData sushiData = SushiDataBaseSO.Entity.GetSushiData(keepID);
+        sushiSelectedText.text = sushiData.name + "で";
+        setSushiImage_2.sprite = sushiData.sprite;
+        selectedSushiPanel.SetActive(true);
+    }
+
+    public void CloseShowSelectedSushiPanel()
+    {
+        selectedSushiPanel.SetActive(false);
+        SoundManager.instance.TransitionSE();
+    }
+
     public void NoDecideButton()
     {
+        TransitionButton();
         sushiPanel.SetActive(false);
     }
 
@@ -177,6 +291,15 @@ public class OptionManager : MonoBehaviour
     void TransitionButton()
     {
         SoundManager.instance.TransitionSE();
+    }
+    void BuySushiButton()
+    {
+        SoundManager.instance.BuySE();
+    }
+    void DecideSushiButton()
+    {
+        SoundManager.instance.DecideSushi();
+
     }
 }
  

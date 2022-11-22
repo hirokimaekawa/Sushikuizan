@@ -30,6 +30,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip successSE;
     public AudioClip popSushiSE;
     public AudioClip transitionSE;
+    public AudioClip bonusSE;
+    public AudioClip buySE;
+    public AudioClip decideSushiSE;
+
 
     // Start is called before the first frame update
     void Start()
@@ -88,5 +92,17 @@ public class SoundManager : MonoBehaviour
     public void TransitionSE()
     {
         audioSourceSE.PlayOneShot(transitionSE);
+    }
+    public void BonusSE()
+    {
+        audioSourceSE.PlayOneShot(bonusSE);
+    }
+    public void BuySE()
+    {
+        audioSourceSE.PlayOneShot(buySE);
+    }
+    public void DecideSushi()
+    {
+        audioSourceSE.PlayOneShot(decideSushiSE);
     }
 }

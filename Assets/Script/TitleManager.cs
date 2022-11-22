@@ -14,6 +14,7 @@ public class TitleManager : MonoBehaviour
     public GameObject fisrtBonusButton;
     public GameObject goSelectButton;
     [SerializeField] TapCoin[] tapCoins;
+    [SerializeField] int addDay;
 
     public enum LOGIN_TYPE
     {
@@ -40,7 +41,7 @@ public class TitleManager : MonoBehaviour
 
         DateTime now = DateTime.Now;//端末の現在時刻の取得        
         todayDate = now.Year * 10000 + now.Month * 100 + now.Day;//日付を数値化　2020年9月1日だと20200901になる
-        todayDate += 10;
+        todayDate += addDay; //テストログイン用
         //前回ログイン時の日付データをロード データがない場合はFIRST_USER_LOGINで0
         lastDate = PlayerPrefs.GetInt("LastGetDate", (int)LOGIN_TYPE.FIRST_USER_LOGIN);
         dayCount = PlayerPrefs.GetInt("LastestDay", dayCount);
@@ -127,20 +128,17 @@ public class TitleManager : MonoBehaviour
         PlayerPrefs.SetInt("LastestDay",dayCount);
         PlayerPrefs.Save();
     }
-    //応用して、ログインデータを保存する
-    //ログインした、してない　public const int NO_LOGIN = 0; public const int LOGIN =  1;
-
-    //PlayerPrefs.SetInt("BOUGHT_KEY"+selectedOptionSettingSushiID.sushiID,BOUGHT);
-
+  
     public void StratButton()
     {
-        //SceneManager.LoadScene("Select");
+        TransitionButton();
         loginPanel.SetActive(true);
         JudgeBonusType();
     }
 
     void ShowFirstLoginPanel()
     {
+        BonusButton();
         fisrtLoginPanel.SetActive(true);
         Money.instance.getMoney += 100; //まず、プレゼントで  100ゼニーをあげる
         Money.instance.currentMoney += 100;
@@ -158,6 +156,7 @@ public class TitleManager : MonoBehaviour
         Debug.Log(tapCoin.tapCoinDay+":"+ dayCount);
         if ((int)tapCoin.tapCoinDay == dayCount-1)
         {
+            BonusButton();
             diaryLoginPanel.SetActive(true);
             //引数のthisをtapCoinで受け取ってtapCoinIDに入れた
             tapCoinID = tapCoin;
@@ -175,15 +174,6 @@ public class TitleManager : MonoBehaviour
         diaryLoginPanel.SetActive(false);
         //tapCoinIDを使ってSwitchImageを参照する
         tapCoinID.SwitchImage();
-
-        ////daycountが10、10日目のログインなら、
-        //if (dayCount == 10)
-        //{
-        //    Debug.Log(dayCount + "だとわかっている");
-        //    dayCount = 0;
-        //    Test();
-        //}
-
         Money.instance.Save();
         goSelectButton.SetActive(true);
         PlayerPrefs.SetInt("LOGIN_KEY" + tapCoinID.tapCoinDay, LOGIN);
@@ -193,6 +183,7 @@ public class TitleManager : MonoBehaviour
 
     public void ShowLastLoginPanel()
     {
+        BonusButton();
         lastLoginPanel.SetActive(true);
         Money.instance.getMoney += 200;
         Money.instance.currentMoney += 200;
@@ -207,14 +198,8 @@ public class TitleManager : MonoBehaviour
 
     public void GoToSelect()
     {
+        TransitionButton();
         SceneManager.LoadScene("Select");
-
-        //if (dayCount == 10)
-        //{
-        //    Test();
-        //    Debug.Log("ifが実行された");
-        //}
-
     }
     //10日目のログインで実行したい関数
     void Test()
@@ -228,19 +213,25 @@ public class TitleManager : MonoBehaviour
         foreach (var tap in tapCoins)
         {
             tap.ResetImage();
-            Debug.Log("foreachが実行された");
-
         }
     }
     public void DeleteLoginKey()
     {
-        Debug.Log("Deleteされた");
-        //PlayerPrefs.DeleteKey("LOGIN_KEY"); //セーブデータのリセットはこちら
-        tapCoinID.TestDeleteKey(); //Coinそれぞれにアタッチされたスクリプトで、それぞれTestDeleteKey（）を実行して、データを削除してみた
-        PlayerPrefs.DeleteKey("LastestDay"); //daycountで保存したKeyは消したはず
-        Debug.Log("Deleteされた");
+        foreach (var tapCoin in tapCoins)　//tapCoinsとしているのは [SerializeField] TapCoin[] tapCoins;とインスペクターで10個宣言してるから。
 
+        {
+            tapCoin.TestDeleteKey();
+        }
+        PlayerPrefs.DeleteKey("LastestDay"); //daycountで保存したKeyは消したはず
+    }
+    void TransitionButton()
+    {
+        SoundManager.instance.TransitionSE();
     }
 
+    void BonusButton()
+    {
+        SoundManager.instance.BonusSE();
+    }
    
 }

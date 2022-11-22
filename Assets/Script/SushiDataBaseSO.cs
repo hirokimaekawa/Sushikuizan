@@ -48,6 +48,7 @@ public class SushiData
     public SushiID sushiID;
     public Sprite sprite;
     public string name;
+    public SushiRank sushiRank;
 }
 public enum SushiID
 {
@@ -95,4 +96,13 @@ public enum TapCoinID
     Day_8,
     Day_9,
     Day_10,
+}
+
+public enum SushiRank
+{
+    Rank_1,
+    Rank_2,
+    Rank_3,
+    Rank_4,
+    Rank_5,
 }
