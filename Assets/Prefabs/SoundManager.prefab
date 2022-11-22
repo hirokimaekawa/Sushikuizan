@@ -53,6 +53,9 @@ MonoBehaviour:
   successSE: {fileID: 8300000, guid: be994d1b940d24a379fdad395278cab4, type: 3}
   popSushiSE: {fileID: 8300000, guid: 8555f3d15935146ddafa312264afbae0, type: 3}
   transitionSE: {fileID: 8300000, guid: b1d044678ebf54d34990114f5eb6f841, type: 3}
+  bonusSE: {fileID: 8300000, guid: 6b18b8c7ae26d412c9eea34a4ba5bde9, type: 3}
+  buySE: {fileID: 8300000, guid: 4228bc1dd831745259b4cae68b6185af, type: 3}
+  decideSushiSE: {fileID: 8300000, guid: d6d7a557f24064ed8ac2f5b36270d80f, type: 3}
 --- !u!82 &2866205640858831446
 AudioSource:
   m_ObjectHideFlags: 0
