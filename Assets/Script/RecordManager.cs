@@ -38,12 +38,12 @@ public class RecordManager : MonoBehaviour
         curerntMoneyText.text = totalMoney.ToString(); //ゆくゆく残数のゼニーと通算獲得のゼニーを分けて考える必要がある
 
         mushikuiTotalPlayCount = mushikuiTotalPlayCount + Money.instance.mushikuiPlayCount;
-        mushikuiPlayCountText.text = mushikuiTotalPlayCount + "回";
+        mushikuiPlayCountText.text = mushikuiTotalPlayCount.ToString();
 
         sushikuiTotalPlayCount = sushikuiTotalPlayCount + Money.instance.sushikuiPlayCount;
-        sushikuiPlayCountText.text = sushikuiTotalPlayCount+"回";
+        sushikuiPlayCountText.text = sushikuiTotalPlayCount.ToString();
         buyTotalSushiCount = buyTotalSushiCount + Money.instance.buySushiCount;
-        buyTotalSushiCountText.text = defautSushiCount + buyTotalSushiCount + "個";
+        buyTotalSushiCountText.text = defautSushiCount + buyTotalSushiCount.ToString();
     }
 
     // Update is called once per frame

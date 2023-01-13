@@ -13,6 +13,8 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            audioSourceBGM = GetComponent<AudioSource>();
+
         }
         else
         {
@@ -32,15 +34,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip transitionSE;
     public AudioClip bonusSE;
     public AudioClip buySE;
+    public AudioClip notBuySE;
     public AudioClip decideSushiSE;
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        audioSourceBGM = GetComponent<AudioSource>();
-        //audioSourceSE　= GetComponent<AudioSource>(); //Publicをやったら、GetConponentはいらない
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -100,6 +99,11 @@ public class SoundManager : MonoBehaviour
     public void BuySE()
     {
         audioSourceSE.PlayOneShot(buySE);
+    }
+    public void NotBuySE()
+    {
+        audioSourceSE.PlayOneShot(notBuySE);
+
     }
     public void DecideSushi()
     {

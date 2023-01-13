@@ -11,6 +11,9 @@ public class OptionSettingSushi : MonoBehaviour
     //Sprite sprite;
     public SushiID sushiID;
 
+
+    //public SaraID saraID;
+
     public SushiData sushiData;
 
     [SerializeField]Image sushiImage;
@@ -19,7 +22,7 @@ public class OptionSettingSushi : MonoBehaviour
     private void Awake()
     {
         sushiImage = GetComponent<Image>();
-        sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sprite;  
+        sushiImage.sprite = SushiDataBaseSO.Entity.GetSushiData(sushiID).sushiSprite;  
     }
 
     public void Start()
