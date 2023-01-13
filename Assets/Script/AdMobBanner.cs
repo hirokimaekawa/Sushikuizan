@@ -47,10 +47,10 @@ public class AdMobBanner : MonoBehaviour
         // https://marumaro7.hatenablog.com/entry/platformsyoriwakeru
 
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";//ここにAndroidのバナーIDを入力
+        string adUnitId = "ca-app-pub-6161839732693205/7715233713";//ここにAndroidのバナーIDを入力
 
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-3940256099942544/2934735716";//ここにiOSのバナーIDを入力
+        string adUnitId = "ca-app-pub-6161839732693205/4266943296";//ここにiOSのバナーIDを入力
 
 #else
         string adUnitId = "unexpected_platform";

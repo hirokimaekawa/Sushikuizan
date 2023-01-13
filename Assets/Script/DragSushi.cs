@@ -16,7 +16,7 @@ public class DragSushi : MonoBehaviour,IDragHandler ,IBeginDragHandler,IEndDragH
             int sushiImageID = PlayerPrefs.GetInt("SUSHI_IMAGE_ID",0);
             Debug.Log(sushiImageID);
             Debug.Log((SushiID)sushiImageID);
-            GetComponent<Image>().sprite = SushiDataBaseSO.Entity.GetSushiData((SushiID)sushiImageID).sprite;
+            GetComponent<Image>().sprite = SushiDataBaseSO.Entity.GetSushiData((SushiID)sushiImageID).sushiSprite;
         }
     }
     public void OnDrag(PointerEventData eventData)

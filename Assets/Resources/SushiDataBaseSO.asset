@@ -14,122 +14,252 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sushiDatas:
   - sushiID: 0
-    sprite: {fileID: 21300000, guid: 6db270d2a4c304ea5b2946b67f6aa2e5, type: 3}
+    sushiSprite: {fileID: 21300000, guid: c0d0770cd66d844e285e217ad8fcf38e, type: 3}
     name: "\u307E\u3050\u308D"
     sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
   - sushiID: 1
-    sprite: {fileID: 21300000, guid: 522f3638d338d4512a478cb4caf33d6c, type: 3}
-    name: "\u30B5\u30FC\u30E2\u30F3"
+    sushiSprite: {fileID: 21300000, guid: 161d646609bb34b999be80c518a5ebbf, type: 3}
+    name: "\u305F\u307E\u3054\u3084\u304D"
     sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
   - sushiID: 2
-    sprite: {fileID: 21300000, guid: 25c4700b8c3b04dd98936245b3a26198, type: 3}
-    name: "\u3044\u304F\u3089"
+    sushiSprite: {fileID: 21300000, guid: 6965fa9975f854ae9a88ee717fe6791e, type: 3}
+    name: "\u30B7\u30FC\u30C1\u30AD\u30F3"
     sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
   - sushiID: 3
-    sprite: {fileID: 21300000, guid: 7724fd4be4a414c4e89510882f8dcd1c, type: 3}
-    name: "\u4E2D\u30C8\u30ED"
-    sushiRank: 0
-  - sushiID: 4
-    sprite: {fileID: 21300000, guid: f10d219941e694965af268e200dd88e3, type: 3}
-    name: "\u30A6\u30CB"
-    sushiRank: 0
-  - sushiID: 5
-    sprite: {fileID: 21300000, guid: 10938e127618d4a6a9ee929d331ebb8f, type: 3}
-    name: "\u3042\u307E\u30A8\u30D3"
-    sushiRank: 0
-  - sushiID: 6
-    sprite: {fileID: 21300000, guid: 67af09a9a81c146f68c34f6080c9fd63, type: 3}
-    name: "\u306F\u307E\u3061"
-    sushiRank: 0
-  - sushiID: 7
-    sprite: {fileID: 21300000, guid: 42f2ef514b4aa4582a77add954b335e5, type: 3}
-    name: "\u30CD\u30AE\u30C8\u30ED"
-    sushiRank: 0
-  - sushiID: 8
-    sprite: {fileID: 21300000, guid: 5ab6cf2cd8e2d442f8956f5e4621d867, type: 3}
-    name: "\u305F\u307E\u3054"
-    sushiRank: 0
-  - sushiID: 9
-    sprite: {fileID: 21300000, guid: 93f1e42ce9ea249e8bdeb002c4a9e202, type: 3}
-    name: "\u30DB\u30BF\u30C6"
-    sushiRank: 0
-  - sushiID: 10
-    sprite: {fileID: 21300000, guid: 2990677f3465c4e94a392f21df8222ee, type: 3}
-    name: "\u30B3\u30FC\u30F3"
-    sushiRank: 1
-  - sushiID: 11
-    sprite: {fileID: 21300000, guid: 1ff90ddc8db79419796ec55dab9f7127, type: 3}
-    name: "\u306A\u3063\u3068\u3046"
-    sushiRank: 1
-  - sushiID: 12
-    sprite: {fileID: 21300000, guid: b4d3afa00a0664f3d8d86aed0662e372, type: 3}
-    name: "\u307E\u3050\u308D\u30E6\u30C3\u30B1"
-    sushiRank: 1
-  - sushiID: 13
-    sprite: {fileID: 21300000, guid: 38faf56b5bee24087b2dc5c4ed64e8ff, type: 3}
-    name: "\u3059\u3058\u3053"
-    sushiRank: 1
-  - sushiID: 14
-    sprite: {fileID: 21300000, guid: f550c3abec9174c7a8616965f78efc6c, type: 3}
-    name: "\u3057\u3089\u3059"
-    sushiRank: 1
-  - sushiID: 15
-    sprite: {fileID: 21300000, guid: efeb4538790874ec68b31680491b4158, type: 3}
-    name: "\u30A8\u30D3\u30DE\u30E8"
-    sushiRank: 1
-  - sushiID: 16
-    sprite: {fileID: 21300000, guid: f19c6a4960caf44409aa84e0b97c8450, type: 3}
-    name: "\u30C4\u30CA\u30DE\u30E8"
-    sushiRank: 1
-  - sushiID: 17
-    sprite: {fileID: 21300000, guid: d48d0d3256a8a4fdeb03349ce1cc0d3f, type: 3}
-    name: "\u6E29\u6CC9\u305F\u307E\u3054"
-    sushiRank: 1
-  - sushiID: 18
-    sprite: {fileID: 21300000, guid: 6a754afeca3d4445fb9e4e91d2982a67, type: 3}
-    name: "\u3081\u3093\u305F\u3044\u3053"
-    sushiRank: 1
-  - sushiID: 19
-    sprite: {fileID: 21300000, guid: bb303b97c2fa64883a7f8e5a17235444, type: 3}
-    name: "\u305F\u3053"
-    sushiRank: 1
-  - sushiID: 20
-    sprite: {fileID: 21300000, guid: 5ac3dc96fc1444c439352f51e87f55e0, type: 3}
+    sushiSprite: {fileID: 21300000, guid: 4053339ec77ff40498748954da38a5ed, type: 3}
     name: "\u3066\u3063\u304B\u307E\u304D"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 4
+    sushiSprite: {fileID: 21300000, guid: cf099dc733e4f47d8b054786cf6cc61d, type: 3}
+    name: "\u30AB\u30C3\u30D1\u307E\u304D"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 5
+    sushiSprite: {fileID: 21300000, guid: 0ea579a3f1a0e43e9b0bdf2f5e110d68, type: 3}
+    name: "\u3068\u3073\u3053"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 6
+    sushiSprite: {fileID: 21300000, guid: 5eb7bbe0b5042488eac547b4ed22232a, type: 3}
+    name: "\u306A\u3063\u3068\u3046\u307E\u304D"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
+  - sushiID: 7
+    sushiSprite: {fileID: 21300000, guid: 289c97bef2f964926a4ce324fd826963, type: 3}
+    name: "\u3044\u306A\u308A\u305A\u3057"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
+  - sushiID: 8
+    sushiSprite: {fileID: 21300000, guid: 76d6b5f51724f43efb8bb99b6d778633, type: 3}
+    name: "\u304B\u3093\u3074\u3087\u3046\u307E\u304D"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
+  - sushiID: 9
+    sushiSprite: {fileID: 21300000, guid: 752ed3d35160c4259a4cc879da236fa1, type: 3}
+    name: "\u30CF\u30F3\u30D0\u30FC\u30B0"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 10
+    sushiSprite: {fileID: 21300000, guid: 0217b0b9242324b4db8ad7d085ebfe3a, type: 3}
+    name: "\u304A\u304F\u3089\u306A\u3063\u3068\u3046"
+    sushiRank: 0
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 11
+    sushiSprite: {fileID: 21300000, guid: c7709c40ba9ab4fdd855994c19a42548, type: 3}
+    name: "\u3080\u3057\u3048\u3073"
+    sushiRank: 1
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 12
+    sushiSprite: {fileID: 21300000, guid: 648c212ccbce54d17bba6b6ef5ed536e, type: 3}
+    name: "\u30DB\u30C3\u30AD\u304C\u3044"
+    sushiRank: 1
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 13
+    sushiSprite: {fileID: 21300000, guid: 91e7532bd84814e4ea88e1bb8eb10c78, type: 3}
+    name: "\u3044\u308F\u3057"
+    sushiRank: 1
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 14
+    sushiSprite: {fileID: 21300000, guid: 1d8f44f202d6a487abc619b93fc2de1a, type: 3}
+    name: "\u3055\u3093\u307E"
+    sushiRank: 1
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 15
+    sushiSprite: {fileID: 21300000, guid: e31293c2fcb9344c8bd2537ccc9c1e29, type: 3}
+    name: "\u30B5\u30FC\u30E2\u30F3"
     sushiRank: 2
-  - sushiID: 21
-    sprite: {fileID: 21300000, guid: 0c227562d074047dfb08a16b14b716a6, type: 3}
-    name: "\u3057\u3081\u30B5\u30D0"
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 16
+    sushiSprite: {fileID: 21300000, guid: 30fee9e0a41284f90989522cd4a71d0a, type: 3}
+    name: "\u3042\u307E\u3048\u3073"
     sushiRank: 2
-  - sushiID: 22
-    sprite: {fileID: 21300000, guid: 3bb3ee05c3b964ce1b5f347976f0f00e, type: 3}
-    name: "\u30AB\u30C3\u30D1"
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 17
+    sushiSprite: {fileID: 21300000, guid: da6777fc0f0d04daaa905f33853a4512, type: 3}
+    name: "\u306F\u307E\u3061"
     sushiRank: 2
-  - sushiID: 23
-    sprite: {fileID: 21300000, guid: 0b54f996645b146aab635879fb80fa18, type: 3}
-    name: "\u3042\u306A\u3054"
-    sushiRank: 2
-  - sushiID: 24
-    sprite: {fileID: 21300000, guid: 5bd92e3db0a3a492983dfbc05a796da7, type: 3}
-    name: "\u3042\u3058"
-    sushiRank: 2
-  - sushiID: 25
-    sprite: {fileID: 21300000, guid: d8dceb7c29ba74f159a53d3c2b22f112, type: 3}
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 18
+    sushiSprite: {fileID: 21300000, guid: c8556c44d27554b3fb1bfb925592c738, type: 3}
     name: "\u3044\u304B"
     sushiRank: 2
-  - sushiID: 26
-    sprite: {fileID: 21300000, guid: 1448ace7db9b04c408c13897f89db496, type: 3}
-    name: "\u304B\u305A\u306E\u3053"
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
+  - sushiID: 19
+    sushiSprite: {fileID: 21300000, guid: bbefcbea08f514e559d7f97a69e36f3a, type: 3}
+    name: "\u305F\u3053"
     sushiRank: 2
-  - sushiID: 27
-    sprite: {fileID: 21300000, guid: f2bdca89756824efa8908be9a3f15c90, type: 3}
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 20
+    sushiSprite: {fileID: 21300000, guid: 82bb2e48c4d5a4e9880df74cbb96bf62, type: 3}
+    name: "\u30CD\u30AE\u30C8\u30ED"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 21
+    sushiSprite: {fileID: 21300000, guid: 0e8ae782d0b324f9d80c995d6a0dce99, type: 3}
+    name: "\u30DE\u30B0\u30ED\u30E6\u30C3\u30B1"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 22
+    sushiSprite: {fileID: 21300000, guid: afb65615634aa476e8f98ccd66b5da44, type: 3}
+    name: "\u30A2\u30B8"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 23
+    sushiSprite: {fileID: 21300000, guid: d41fb94be31c54c0e90a9d180aa153b7, type: 3}
     name: "\u30AB\u30C4\u30AA"
     sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 24
+    sushiSprite: {fileID: 21300000, guid: 21a2ec40ec92649938f89eecfafef21b, type: 3}
+    name: "\u3048\u3093\u304C\u308F"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: f4cfd76b6600448288d21faf67511dba, type: 3}
+  - sushiID: 25
+    sushiSprite: {fileID: 21300000, guid: 3522d091652d349318c126e90005f253, type: 3}
+    name: "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: 24cb9b99c089848eda1ebe0ed1070438, type: 3}
+  - sushiID: 26
+    sushiSprite: {fileID: 21300000, guid: a44b9b535a22d47dea774815994afce1, type: 3}
+    name: "\u3064\u3076"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: ccfb9d512e4dd4050bb2a5b3cc86dfe7, type: 3}
+  - sushiID: 27
+    sushiSprite: {fileID: 21300000, guid: d4fa8d117488b4acd976ee2a88216da6, type: 3}
+    name: "\u3073\u3093\u3061\u3087\u3046\u30DE\u30B0\u30ED"
+    sushiRank: 2
+    saraSprite: {fileID: 21300000, guid: d50290d862c614a7b8d9bffc653ae198, type: 3}
   - sushiID: 28
-    sprite: {fileID: 21300000, guid: 4824f0a146f2949b99cbdff9dc25162a, type: 3}
-    name: "\u304B\u306B"
-    sushiRank: 2
+    sushiSprite: {fileID: 21300000, guid: cb11591271d60490d93591b186ddfe79, type: 3}
+    name: "\u3076\u308A"
+    sushiRank: 3
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
   - sushiID: 29
-    sprite: {fileID: 21300000, guid: 5ea9882ab95954e1ead369a1cb1282f6, type: 3}
+    sushiSprite: {fileID: 21300000, guid: fd0ac95a9288b4e0a868b306ef32bff7, type: 3}
+    name: "\u30BF\u30A4"
+    sushiRank: 3
+    saraSprite: {fileID: 21300000, guid: 50e988eca42d8424e8b69aaa23c4f028, type: 3}
+  - sushiID: 30
+    sushiSprite: {fileID: 21300000, guid: 09df0beb0119f49eb91ef5e2bb20841f, type: 3}
+    name: "\u30AB\u30F3\u30D1\u30C1"
+    sushiRank: 3
+    saraSprite: {fileID: 21300000, guid: 0033b3e182d5245f9865b90cbbd79d27, type: 3}
+  - sushiID: 31
+    sushiSprite: {fileID: 21300000, guid: eaefcae6353e743f18c83065328db202, type: 3}
+    name: "\u304B\u306B\u307F\u305D"
+    sushiRank: 3
+    saraSprite: {fileID: 21300000, guid: 0033b3e182d5245f9865b90cbbd79d27, type: 3}
+  - sushiID: 32
+    sushiSprite: {fileID: 21300000, guid: 99ebfcf56d2f040c3bbb0b101a346ce8, type: 3}
+    name: "\u3059\u3058\u3053"
+    sushiRank: 3
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 33
+    sushiSprite: {fileID: 21300000, guid: b1418787abd244b1ba5adc8fe49da170, type: 3}
+    name: "\u30C8\u30ED\u30B5\u30FC\u30E2\u30F3"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 0033b3e182d5245f9865b90cbbd79d27, type: 3}
+  - sushiID: 34
+    sushiSprite: {fileID: 21300000, guid: 62b0ea0be3c464fb6ac3e0282ae99212, type: 3}
+    name: "\u3044\u304F\u3089"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 35
+    sushiSprite: {fileID: 21300000, guid: 633d41d229a1a47dca81029826feb58b, type: 3}
+    name: "\u4E2D\u30C8\u30ED"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 50e988eca42d8424e8b69aaa23c4f028, type: 3}
+  - sushiID: 36
+    sushiSprite: {fileID: 21300000, guid: 0f774b30e1bc9483ea967108b30b407b, type: 3}
+    name: "\u30D2\u30E9\u30E1"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 50e988eca42d8424e8b69aaa23c4f028, type: 3}
+  - sushiID: 37
+    sushiSprite: {fileID: 21300000, guid: 1922358731700455eb562b202a1874fb, type: 3}
+    name: "\u3055\u3070"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 0033b3e182d5245f9865b90cbbd79d27, type: 3}
+  - sushiID: 38
+    sushiSprite: {fileID: 21300000, guid: a94264463f4454c2ca0c7a56f089f87a, type: 3}
+    name: "\u304B\u305A\u306E\u3053"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 39
+    sushiSprite: {fileID: 21300000, guid: f8a3f4dd040a84fc6b5869fa6bc163bd, type: 3}
+    name: "\u3046\u306A\u304E"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 0033b3e182d5245f9865b90cbbd79d27, type: 3}
+  - sushiID: 40
+    sushiSprite: {fileID: 21300000, guid: 65294c98dfca3466798cc2c3c0787101, type: 3}
+    name: "\u30BA\u30EF\u30A4\u304C\u306B"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 50e988eca42d8424e8b69aaa23c4f028, type: 3}
+  - sushiID: 41
+    sushiSprite: {fileID: 21300000, guid: 96471f3e63ba048fdbd810730b4c68ec, type: 3}
+    name: "\u3042\u306A\u3054"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 42
+    sushiSprite: {fileID: 21300000, guid: 0bd57207eb4904f58814dc8907b8dd67, type: 3}
+    name: "\u30DE\u30B0\u30ED\u8D64\u8EAB"
+    sushiRank: 4
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 43
+    sushiSprite: {fileID: 21300000, guid: 3dc56bbfad2614289ad62ae5ae0ae143, type: 3}
     name: "\u5927\u30C8\u30ED"
-    sushiRank: 2
+    sushiRank: 5
+    saraSprite: {fileID: 21300000, guid: 8ae4445d382a340aba5d89413737c470, type: 3}
+  - sushiID: 44
+    sushiSprite: {fileID: 21300000, guid: f1ed84a2f823f4f38bc152b87e20d441, type: 3}
+    name: "\u30A6\u30CB"
+    sushiRank: 5
+    saraSprite: {fileID: 21300000, guid: 4d8047641cff9496498b283e262b48b4, type: 3}
+  - sushiID: 45
+    sushiSprite: {fileID: 21300000, guid: 7ef68e27c06004ab4889b42e8cd29337, type: 3}
+    name: "\u30DB\u30BF\u30C6"
+    sushiRank: 5
+    saraSprite: {fileID: 21300000, guid: 8ae4445d382a340aba5d89413737c470, type: 3}
+  - sushiID: 46
+    sushiSprite: {fileID: 21300000, guid: 2d40347bf40714b7c9dbfd2fc118c937, type: 3}
+    name: "\u30DC\u30BF\u30F3\u3048\u3073"
+    sushiRank: 6
+    saraSprite: {fileID: 21300000, guid: d50290d862c614a7b8d9bffc653ae198, type: 3}
+  - sushiID: 47
+    sushiSprite: {fileID: 21300000, guid: cdfc98027a8e74ffbbeab69cf9d16c4e, type: 3}
+    name: "\u30BF\u30E9\u30D0\u30AC\u30CB"
+    sushiRank: 6
+    saraSprite: {fileID: 21300000, guid: d50290d862c614a7b8d9bffc653ae198, type: 3}
+  - sushiID: 48
+    sushiSprite: {fileID: 21300000, guid: cdfa57263d9104a029d71de534e21395, type: 3}
+    name: "\u30CE\u30C9\u30B0\u30ED"
+    sushiRank: 6
+    saraSprite: {fileID: 21300000, guid: d50290d862c614a7b8d9bffc653ae198, type: 3}
+  - sushiID: 49
+    sushiSprite: {fileID: 21300000, guid: 060e0c712f61049ac8202878a45fe175, type: 3}
+    name: "\u3042\u308F\u3073"
+    sushiRank: 6
+    saraSprite: {fileID: 21300000, guid: d50290d862c614a7b8d9bffc653ae198, type: 3}

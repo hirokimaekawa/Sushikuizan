@@ -13,7 +13,7 @@ public class DefaultSushi : MonoBehaviour
             int sushiImageID = PlayerPrefs.GetInt("SUSHI_IMAGE_ID", 0);
             Debug.Log(sushiImageID);
             Debug.Log((SushiID)sushiImageID);
-            GetComponent<Image>().sprite = SushiDataBaseSO.Entity.GetSushiData((SushiID)sushiImageID).sprite;
+            GetComponent<Image>().sprite = SushiDataBaseSO.Entity.GetSushiData((SushiID)sushiImageID).sushiSprite;
         }
     }
 
