@@ -789,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827808541178762759, guid: c244b33a1967a4eabb79958e74d56d54, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6827808541178762759, guid: c244b33a1967a4eabb79958e74d56d54, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1050,6 +1050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &226358093
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1425,6 +1427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &324178531
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1685,6 +1689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &402781239
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2125,8 +2131,8 @@ Canvas:
   m_GameObject: {fileID: 442400386}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1912945416}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2135,7 +2141,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &442400390
 RectTransform:
@@ -2249,6 +2255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &465687836
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2352,6 +2360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &470185136
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4062,6 +4072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &932019529
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4617,6 +4629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &1148532754
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4809,6 +4823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &1188094129
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5301,6 +5317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &1385256780
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5519,7 +5537,7 @@ RectTransform:
   m_GameObject: {fileID: 1463802908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.047976, y: 2.047976, z: 2.047976}
+  m_LocalScale: {x: 1.7691154, y: 1.7691154, z: 1.7691154}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1322946258}
@@ -5544,11 +5562,11 @@ RectTransform:
   - {fileID: 152912571}
   - {fileID: 125088174}
   - {fileID: 6250394832147952525}
-  - {fileID: 3876976608543055482}
   - {fileID: 3027899956933975630}
+  - {fileID: 3876976608543055482}
+  - {fileID: 5693241415246394337}
   - {fileID: 1886391104}
   - {fileID: 216654289}
-  - {fileID: 5693241415246394337}
   m_Father: {fileID: 442400390}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5879,6 +5897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParent: {fileID: 0}
+  backPosition: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!225 &1523942216
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6777,7 +6797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2617905051463624899, guid: db4a26a2ef0b140829d463ad1d18835f, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2617905051463624899, guid: db4a26a2ef0b140829d463ad1d18835f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6905,9 +6925,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.12500438
+    y: 0.09547663
     width: 1
-    height: 0.74999124
+    height: 0.80904675
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -7435,7 +7455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3987341178063956055, guid: f40871b2b10504cfcb96084a0346a3a9, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3987341178063956055, guid: f40871b2b10504cfcb96084a0346a3a9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7899,7 +7919,7 @@ RectTransform:
   - {fileID: 3027899957201250892}
   - {fileID: 3027899955652923175}
   m_Father: {fileID: 1463802909}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8479,7 +8499,7 @@ RectTransform:
   - {fileID: 5693241415693954508}
   - {fileID: 5693241415482067929}
   m_Father: {fileID: 1463802909}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
