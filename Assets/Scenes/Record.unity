@@ -1183,6 +1183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbMobManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8145653313488247528, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8145653313488247531, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1510,7 +1514,7 @@ RectTransform:
   m_GameObject: {fileID: 1213848228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6551725, y: 1.6551725, z: 1.6551725}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 322694904}
@@ -1543,7 +1547,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1334, y: 750}
+  m_SizeDelta: {x: 1333.9999, y: 749.99994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213848230
 MonoBehaviour:
@@ -1645,9 +1649,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.00024989247
     width: 1
-    height: 1
+    height: 0.9995002
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

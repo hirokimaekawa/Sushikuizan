@@ -305,9 +305,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.00024989247
     width: 1
-    height: 1
+    height: 0.9995002
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -591,6 +591,10 @@ PrefabInstance:
     - target: {fileID: 8145653313488247528, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
       propertyPath: m_Name
       value: AbMobManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145653313488247528, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8145653313488247531, guid: ffa5e21f188b94ef885e8f78061a3727, type: 3}
       propertyPath: m_RootOrder
@@ -4814,7 +4818,7 @@ RectTransform:
   m_GameObject: {fileID: 1881998367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6551725, y: 1.6551725, z: 1.6551725}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2046387549}
