@@ -1,0 +1,151 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AccessWeb">
+			<method name="ClickTwitter"/>
+		</type>
+		<type fullname="AdMobInterstitial">
+			<method name="ShowAdMobInterstitial"/>
+			<method name="ShowAdMobInterstitial"/>
+		</type>
+		<type fullname="GameOptionPresenter">
+			<method name="BackButton"/>
+			<method name="BackContactButton"/>
+			<method name="BackSoundButton"/>
+			<method name="ContactButton"/>
+			<method name="OffBGMButton"/>
+			<method name="OffSEButton"/>
+			<method name="OnBGMButton"/>
+			<method name="OnSEButton"/>
+			<method name="ShowHowPlayPanelButton"/>
+			<method name="SoundButton"/>
+			<method name="SwitchHowPlayPanelButton_1"/>
+			<method name="SwitchHowPlayPanelButton_2"/>
+			<method name="SwitchHowPlayPanelButton_3"/>
+			<method name="SwitchHowPlayPanelButton_4"/>
+			<method name="SwitchHowPlayPanelButton_5"/>
+			<method name="SwitchHowPlayPanelButton_6"/>
+			<method name="SwitchHowPlayPanelButton_7"/>
+		</type>
+		<type fullname="MailManager">
+			<method name="SendMail"/>
+		</type>
+		<type fullname="Mushikuizan">
+			<method name="BackButton"/>
+			<method name="NoButton"/>
+			<method name="RetryButton"/>
+			<method name="SelectNumber_0"/>
+			<method name="SelectNumber_1"/>
+			<method name="SelectNumber_10"/>
+			<method name="SelectNumber_2"/>
+			<method name="SelectNumber_3"/>
+			<method name="SelectNumber_4"/>
+			<method name="SelectNumber_5"/>
+			<method name="SelectNumber_6"/>
+			<method name="SelectNumber_7"/>
+			<method name="SelectNumber_8"/>
+			<method name="SelectNumber_9"/>
+			<method name="YesButton"/>
+		</type>
+		<type fullname="OptionManager">
+			<method name="BackButton"/>
+			<method name="BuyButton"/>
+			<method name="CloseLackMoneyPanel"/>
+			<method name="CloseShowBoughtSushiPanel"/>
+			<method name="CloseShowSelectedSushiPanel"/>
+			<method name="DecideButton"/>
+			<method name="NoDecideButton"/>
+			<method name="NotBuyButton"/>
+			<method name="OnLeftArrow"/>
+			<method name="OnRightArrow"/>
+		</type>
+		<type fullname="OptionSettingSushi">
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+			<method name="OnClick"/>
+		</type>
+		<type fullname="RecordManager">
+			<method name="BackButton"/>
+		</type>
+		<type fullname="SelectManager">
+			<method name="LoadGameOption"/>
+			<method name="LoadMushikuizan"/>
+			<method name="LoadOption"/>
+			<method name="LoadReward"/>
+			<method name="LoadSushikuizan"/>
+		</type>
+		<type fullname="Sushikuizan">
+			<method name="AnwserButton"/>
+			<method name="BackButton"/>
+			<method name="NoButton"/>
+			<method name="ResetButton"/>
+			<method name="RetryButton"/>
+			<method name="YesButton"/>
+		</type>
+		<type fullname="TapCoin">
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+			<method name="TapDayButton"/>
+		</type>
+		<type fullname="TitleManager">
+			<method name="DiaryBonusButton"/>
+			<method name="FisrtBonusButton"/>
+			<method name="GoToSelect"/>
+			<method name="LastBonusButton"/>
+			<method name="StratButton"/>
+		</type>
+	</assembly>
+</linker>
